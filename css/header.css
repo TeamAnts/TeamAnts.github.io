@@ -12,16 +12,18 @@ header {
         -webkit-text-fill-color: white;
         -webkit-text-stroke-width: 1px; 
         -webkit-text-stroke-color: black;
+    background: #fffeb3;
 }
 
 h1 {
     font-size: 70px;
     text-align: center;
     letter-spacing: 1px;
+    margin: 0px;
 }
 
 span {
-    -webkit-text-fill-color: pink;
+    -webkit-text-fill-color: #EF6C68;
     -webkit-text-stroke-width: 1px; 
     -webkit-text-stroke-color: black;
 }
