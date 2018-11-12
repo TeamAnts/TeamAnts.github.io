@@ -1,6 +1,27 @@
+@font-face {
+    font-family: 'bodegasans_mediumoldstyleRg';
+    src: url('../assets/fonts/bodegasansmediumoldstyle-webfont.woff2') format('woff2'),
+         url('../assets/fonts/bodegasansmediumoldstyle-webfont.woff') format('woff'),
+         url('../assets/fonts/bodegasansmediumoldstyle-webfont.ttf') format('tff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 header {
     font-family: 'bodegasans_mediumoldstyleRg';
         -webkit-text-fill-color: white;
         -webkit-text-stroke-width: 1px; 
         -webkit-text-stroke-color: black;
+}
+
+h1 {
+    font-size: 70px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+span {
+    -webkit-text-fill-color: pink;
+    -webkit-text-stroke-width: 1px; 
+    -webkit-text-stroke-color: black;
 }
