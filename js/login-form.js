@@ -2,7 +2,7 @@ import html from './html.js';
 
 function makeTemplate() {
     return html`
-        form name="player"
+        <form name="player">
             <label>
               Player Name
               <input required name="playerName">
