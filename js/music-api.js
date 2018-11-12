@@ -3,31 +3,31 @@ export default [
     {
         artist: '',
         song_name: '',
-        song: '../assets/bag.jpg',
+        song: '../assets/x.mp3',
         
     },
     {
         artist: '',
         song_name: '',
-        song: '../assets/bag.jpg',
+        song: '../assets/x.mp3',
         
     },
     {
         artist: '',
         song_name: '',
-        song: '../assets/bag.jpg',
+        song: '../assets/x.mp3',
         
     },
     {
         artist: '',
         song_name: '',
-        song: '../assets/bag.jpg',
+        song: '../assets/x.mp3',
        
     },
     {
         artist: '',
         song_name: '',
-        song: '../assets/bag.jpg',
+        song: '../assets/x.mp3',
        
     }
 ];
