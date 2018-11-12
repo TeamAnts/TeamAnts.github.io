@@ -1,10 +1,15 @@
 import Header from './header.js';
 import html from './html.js';
+import LoginForm from './login-form.js';
+import Footer from './footer.js';
+
 
 function makeTemplate() {
     return html`
         <div class="app">
             <header></header>
+            <form></form>
+            <footer></footer>
         </div>
     `;
 }
@@ -16,6 +21,14 @@ export default class App {
         const header = new Header;
         headerContainer.appendChild(header.render());
 
+        const formContainer = dom.querySelector('form');
+        const form = new LoginForm;
+        formContainer.appendChild(form.render());
+
+        const footerContainer = dom.querySelector('footer');
+        const footer = new Footer;
+        footerContainer.appendChild(footer.render());
+        
         return dom;
     }
 
