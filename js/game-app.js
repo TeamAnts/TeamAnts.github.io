@@ -1,25 +1,23 @@
 import html from './html.js';
-import header from './header.js';
+import Header from './header.js';
 
 function makeTemplate() {
     return html`
         <header></header>
-
-        <div id="answers">
-        <input required type="radio" id="genie in a bottle" value="genie in a bottle">
-        <label for="genie in a bottle"> Genie in a Bottle</label>
-        </div>
+        <div class="player"></div>
+        <div class="form"></div>
     `;
 }
 
-export default class Answers {
+class GameApp {
     render() {
         const dom = makeTemplate();
         const headerContainer = dom.querySelector('header');
-    
+        const header = new Header;
         headerContainer.appendChild(header.render());
-    
         return dom;
     }
 }
-
+const gameApp = new GameApp;
+const root = document.getElementById('root');
+root.appendChild(gameApp.render());
