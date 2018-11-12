@@ -3,3 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
