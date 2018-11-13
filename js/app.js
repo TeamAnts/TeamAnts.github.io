@@ -20,7 +20,11 @@ export default class App {
         headerContainer.appendChild(header.render());
 
         const formContainer = dom.querySelector('form');
-        const form = new LoginForm;
+        const form = new LoginForm (player => {
+            console.log(player);
+            // Add here to add player to person-api.js
+            // window.location = './game.html';
+        });
         formContainer.appendChild(form.render());
         
         return dom;
