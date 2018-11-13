@@ -33,11 +33,7 @@ class LoginForm {
             };
 
             this.onSubmit(player);
-            
-           
-            const formContainer = dom.querySelector('form');
-            const form = new LoginForm;
-            formContainer.appendChild(form.render());
+        
         });
 
          
