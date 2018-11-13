@@ -2,7 +2,7 @@ import html from './html.js';
 import Header from './header.js';
 import Footer from './footer.js';
 import AnswerCard from './answer-card.js';
-import musicApi from './music-api.js';
+// import musicApi from './music-api.js';
 
 // const songs
 function makeTemplate() {
