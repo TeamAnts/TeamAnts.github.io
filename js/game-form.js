@@ -51,9 +51,9 @@ export default class GameForm {
 
         randomAnswers.forEach(answer => {
             const answerCard = new AnswerCard(answer, selected => {
-                const index = this.music.indexOf(selected);
-                console.log(index);
+                
                 this.count++;
+                console.log(selected.title);
                 if(this.count === 10) {
                     window.location = './results.html';
                 }
