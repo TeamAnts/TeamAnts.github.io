@@ -1,28 +1,27 @@
 import html from './html.js';
-import musicApi from './music-api.js';
 
-const music = musicApi.getAll();
 
-function makeTemplate() {
+function makeTemplate(answer) {
     return html`
             <li class="answer-card">
-                <input type="radio">
-                <h4 class="answer">${music}</h4>
+                <h4 class="answerCard">${answer.title}</h4>
             </li>
     `;
 }
-
 export default class AnswerCard {
-    constructor(answer) {
+    constructor(answer, onSelect) {
         this.answer = answer;
+        this.onSelect = onSelect;
     }
-   
-    // console.log('this answer', this.answer);
-
     render() {
-        const dom = makeTemplate();
-        // const li = dom.querySelector('li');
-
+        const dom = makeTemplate(this.answer);
+        // this.listItem = dom.querySelector('h4');
+        // this.listItem = this.answerCard.title;
+          
+        const li = dom.querySelector('li');
+        li.addEventListener('click', () => {
+            this.onSelect(this.answerCard);
+        });
         return dom;
     }
 }
