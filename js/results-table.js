@@ -1,18 +1,19 @@
 import html from './html.js';
-import playersApi from './players-api.js';
+// import playersApi from './players-api.js';
 
 function makeTemplate() {
-  return html`
+    return html`
       <h3>Greatest of all time!</h3>
+      <li>
        
   `;
 }
 
 class ResultsTable {
-  render() {
-    return makeTemplate();
+    render() {
+        return makeTemplate();
 
-}
+    }
 }
 
 export default ResultsTable;

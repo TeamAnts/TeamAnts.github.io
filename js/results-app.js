@@ -1,10 +1,10 @@
 import html from './html.js';
-import playerApi from './players-api.js';
+import playersApi from './players-api.js';
 import Result from './results.js';
 import ResultTable from './results-table.js';
 
 function makeTemplate() {
-  return html`
+    return html`
       <header></header>
       <main>
           <section class="player-score">
@@ -17,24 +17,22 @@ function makeTemplate() {
 }
 
 class ResultsApp {
-  render() {
-    const dom = makeTemplate();
+    render() {
+        const dom = makeTemplate();
   
-    const playerScoreSection = dom.querySelector('.player-score');
-    const topTenSection = dom.querySelector('.top-ten');
+        const playerScoreSection = dom.querySelector('.player-score');
+        const topTenSection = dom.querySelector('.top-ten');
   
-    const result = new Result(player => {
-      // will get score from game 
-      // will get name from login
-    })
-    playerScoreSection.appendChild(result.render());
+        const result = new Result(playersApi.getAll().pop());
+      
+        playerScoreSection.appendChild(result.render());
   
-    const results = new ResultTable ([]);
-    topTenSection.appendChild(results.render());
+        const results = new ResultTable ([]);
+        topTenSection.appendChild(results.render());
   
   
-    return dom;
-  };
+        return dom;
+    }
 }
 
 
