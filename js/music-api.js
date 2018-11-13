@@ -63,12 +63,7 @@ let songs = [
 
 const musicApi = {
     getAll() {
-        const guess = songs.map(song => {
-            return {
-                name: song.title
-            };
-        });
-        return guess;
+        return songs[0].title;
     }
 };
 export default musicApi;

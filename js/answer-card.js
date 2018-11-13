@@ -1,9 +1,12 @@
 import html from './html.js';
+import musicApi from './music-api.js';
 
-function makeTemplate(answer) {
+const music = musicApi.getAll();
+
+function makeTemplate() {
     return html`
             <li class="answer-card">
-                <h4 class="answer">${answer.title}</h4>
+                <h4 class="answer">${music}</h4>
             </li>
     `;
 }
@@ -12,7 +15,7 @@ export default class AnswerCard {
     constructor(answer) {
         this.answer = answer;
     }
-    console.log('answer', answer);
+   
     // console.log('this answer', this.answer);
 
     render() {
