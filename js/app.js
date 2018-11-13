@@ -2,7 +2,7 @@ import Header from './header.js';
 import html from './html.js';
 import LoginForm from './login-form.js';
 import Footer from './footer.js';
-
+import playerApi from './players-api.js';
 
 function makeTemplate() {
     return html`
@@ -23,7 +23,8 @@ export default class App {
 
         const formContainer = dom.querySelector('form');
         const form = new LoginForm (player => {
-            console.log(player);
+            playerApi.add(player);
+            // console.log(player);
             // Add here to add player to person-api.js
             window.location = './game.html';
         });
