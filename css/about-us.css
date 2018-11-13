@@ -1,0 +1,9 @@
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.about-us-card {
+    display: flex;
+    width: 80vw;
+}

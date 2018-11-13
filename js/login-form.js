@@ -34,8 +34,7 @@ class LoginForm {
             };
 
             this.onSubmit(player);
-            
-           
+        
         });
 
          

@@ -63,7 +63,7 @@ let songs = [
 
 const musicApi = {
     getAll() {
-        return songs[0].title;
+        return songs;
     }
 };
 export default musicApi;
