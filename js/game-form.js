@@ -9,34 +9,70 @@ function makeTemplate() {
         <ul class="answer-list"></ul>
     `;
 }
+function getRandomIndex(length) {
+    return Math.floor(Math.random() * length);
+}
+
 export default class GameForm {
-    constructor() {
+    constructor(answers) {
+        this.answers = answers;
+
+        this.answersPer = 4;
+        this.rounds = 10;
+        this.lastAnswers = [];
+
+        this.music = music;
+    }
+   
+    getRandomAnswers() {
+        const copy = this.music.slice();
+        const randomAnswers = [];
+
+        for(let i = 0; i < this.answersPer; i++) {
+            const index = getRandomIndex(copy.length);
+            const song = copy[index];
+            copy.splice(index, 1);
+
+            if(this.lastAnswers.includes(song)) {
+                i--;
+                continue;
+            }
+            else {
+                randomAnswers.push(song);
+            }
+
+        }
+        this.lastAnswers = randomAnswers;
+        return randomAnswers;
     }
 
+    showRandomAnswers() {
+        const randomAnswers = this.getRandomAnswers();
+
+        randomAnswers.forEach(answer => {
+            const answerCard = new AnswerCard(answer, selected => {
+                const index = this.music.indexOf(selected);
+                console.log(index);
+                this.count++;
+                if(this.count === 10) {
+                    window.location = './results.html';
+                }
+                this.clearAnswers();
+                this.showRandomAnswers();
+            });
+            this.list.appendChild(answerCard.render());
+        });
+    }
+    clearAnswers() {
+        while(this.list.lastElementChild) {
+            this.list.lastElementChild.remove();
+        }
+    }
     render() {
         const dom = makeTemplate();
-        this.ul = dom.querySelector('ul');
-        this.update();
+        this.list = dom.querySelector('ul');
+        this.showRandomAnswers();
+
         return dom;
-    }
-
-    update() {
-        while(this.ul.lastElementChild) {
-            this.ul.lastElementChild.remove();
-        }
-        
-        for(let i = 0; i < 4; i++) {
-            const exampleAnswer = { title: music[this.randomInt()].title };
-            let randomAnswer = new AnswerCard(exampleAnswer, function(answer) {
-                console.log(answer);
-            });
-            this.ul.appendChild(randomAnswer.render());
-        }
-    
-    }
-
-    randomInt() {
-        const index = Math.floor(Math.random() * Math.floor(9));
-        return index;
     }
 }
