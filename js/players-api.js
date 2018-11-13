@@ -23,6 +23,7 @@ const playersApi = {
     },
     add(player) {
     // 1. add to our array
+        player.score = 0;
         players.push(player);
     // 2. save array to localStorage
         savePlayers();

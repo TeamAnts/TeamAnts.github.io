@@ -1,11 +1,12 @@
 import html from './html.js';
+// send me to login app
 
 function makeTemplate() {
     return html`
-        <form name="player">
-            <label>
-              Player Name
-              <input required name="playerName">
+        <form id="login" name="player">
+            <label for="name">
+              PLAYER NAME
+              <input required name="playerName" id="playerName">
             </label>  
 
             <label>  
