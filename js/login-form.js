@@ -9,7 +9,7 @@ function makeTemplate() {
             </label>  
 
             <label>  
-            <button type="submit">P L A Y</button>
+            <button>P L A Y</button>
             </label>
         </form>    
     `;
@@ -33,6 +33,7 @@ class LoginForm {
             };
 
             this.onSubmit(player);
+            
            
         });
 
