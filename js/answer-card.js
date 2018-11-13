@@ -6,6 +6,7 @@ const music = musicApi.getAll();
 function makeTemplate() {
     return html`
             <li class="answer-card">
+                <input type="radio">
                 <h4 class="answer">${music}</h4>
             </li>
     `;
