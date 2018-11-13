@@ -1,8 +1,8 @@
 import AnswerCard from './answer-card.js';
 import html from './html.js';
-import musicApi from './music-api.js';
+// import musicApi from './music-api.js';
 
-const music = musicApi.getAll();
+// const music = musicApi.getAll();
 
 function makeTemplate() {
     return html`
@@ -25,7 +25,7 @@ export default class GameForm {
             this.ul.lastElementChild.remove();
         }
         for(let i = 0; i < 3; i++) {
-            const exampleAnswer = { title: 'title here' }
+            const exampleAnswer = { title: 'title here' };
             let randomAnswer = new AnswerCard(exampleAnswer, function(answer) {
                 console.log(answer);
             });
