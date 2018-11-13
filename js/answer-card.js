@@ -2,12 +2,9 @@ import html from './html.js';
 
 function makeTemplate(answer) {
     return html`
-        <div id="answers-form">
-        <fieldset>
             <li class="answer-card">
-                <h4 class="answer">${answer.name}</h4>
+                <h4 class="answer">${answer.song_name}</h4>
             </li>
-        </fieldset>
     `;
 }
 
@@ -15,9 +12,11 @@ export default class AnswerCard {
     constructor(answer) {
         this.answer = answer;
     }
+    // console.log('this answer', this.answer);
 
     render() {
-        const dom = makeTemplate(this.answer);
+        const dom = makeTemplate();
+    
         return dom;
     }
 }

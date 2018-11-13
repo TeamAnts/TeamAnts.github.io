@@ -1,6 +1,7 @@
 import html from './html.js';
 import Header from './header.js';
 import Footer from './footer.js';
+import AnswerCard from './answer-card.js';
 
 
 function makeTemplate() {
@@ -24,13 +25,14 @@ class GameApp {
         const footer = new Footer;
         footerContainer.appendChild(footer.render());
 
-        // const answersForm = dom.querySelector('.answers-form');
-        // const answers = new Answers;
-        // answersForm.appendChild(answers.render());
+        const answerContainer = dom.querySelector('.answers-form');
+        const answerCard = new AnswerCard;
+        answerContainer.appendChild(answerCard.render());
 
+        
         return dom;
     }
 }
 const gameApp = new GameApp;
 const root = document.getElementById('root');
-root.appendChild(gameApp.render());
+root.appendChild(gameApp.render()); 
