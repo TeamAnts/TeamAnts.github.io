@@ -1,5 +1,6 @@
 import html from './html.js';
 import Header from './header.js';
+import Footer from './footer.js';
 import Answers from './game-form.js';
 
 function makeTemplate() {
@@ -7,6 +8,7 @@ function makeTemplate() {
         <header></header>
         <div class="player"></div>
         <div class="answers-form"></div>
+        <footer></footer>
     `;
 }
 
@@ -18,9 +20,13 @@ class GameApp {
         const header = new Header;
         headerContainer.appendChild(header.render());
 
-        const answersContainer = dom.querySelector('answers');
+        const footerContainer = dom.querySelector('footer');
+        const footer = new Footer;
+        footerContainer.appendChild(footer.render());
+
+        const answersForm = dom.querySelector('.answers-form');
         const answers = new Answers;
-        answersContainer.appendChild(answers.render());
+        answersForm.appendChild(answers.render());
 
         return dom;
     }
