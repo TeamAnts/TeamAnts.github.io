@@ -5,7 +5,7 @@ function makeTemplate() {
         <p>Team Ant 2018</p>
             <nav class="nav">
                 <ul>
-                    <li><a href="url">About</a></li>
+                    <li><a href="./about-us.html">About</a></li>
                 </ul>
             </nav>
     `;
