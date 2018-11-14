@@ -31,8 +31,13 @@ button {
     color: #fffeb3;
 }
 
-body {
+form {
     background-color: #6fcb9f;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: inline-flex;
+    justify-content: center;
+
 }
 
 label[for="name"] {

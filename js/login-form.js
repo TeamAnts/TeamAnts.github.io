@@ -3,6 +3,7 @@ import html from './html.js';
 
 function makeTemplate() {
     return html`
+       
         <form id="login" name="player">
             <label for="name">
               PLAYER NAME
@@ -12,7 +13,8 @@ function makeTemplate() {
             <label>  
             <button>P L A Y</button>
             </label>
-        </form>    
+        </form>  
+         
     `;
 }
 
