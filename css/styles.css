@@ -45,4 +45,10 @@ label[for="name"] {
     
     
 }
+.game-form{display:block;
+    margin:0,auto;
+    padding:50px;
+    background-color:#6fcb9f;
+    font-family:sans-serif;
+    color:whitesmoke;
 
