@@ -35,8 +35,11 @@ class GameApp {
         const musicPlayer = new MusicPlayer;
         musicPlayerContainer.appendChild(musicPlayer.render());
 
-        
         return dom;
+    }
+
+    addScore() {
+        // if music player index === selected index, + points 
     }
 }
 const gameApp = new GameApp;

@@ -1,6 +1,7 @@
 import AnswerCard from './answer-card.js';
 import html from './html.js';
 import musicApi from './music-api.js';
+import gameApi from './game-api.js';
 
 const music = musicApi.getAll();
 
@@ -13,6 +14,7 @@ function makeTemplate() {
 function getRandomIndex(length) {
     return Math.floor(Math.random() * length);
 }
+const selectedAnswers = []; 
 
 export default class GameForm {
     constructor(answers) {
@@ -50,13 +52,14 @@ export default class GameForm {
 
     showRandomAnswers() {
         const randomAnswers = this.getRandomAnswers();
-
         randomAnswers.forEach(answer => {
             const answerCard = new AnswerCard(answer, selected => {
-                
+                selectedAnswers.push(selected.title);
+                console.log(selectedAnswers);
                 this.count++;
                 console.log(selected.title);
                 if(this.count === 10) {
+                    gameApi.add(selectedAnswers);
                     window.location = './results.html';
                 }
                 this.clearAnswers();
