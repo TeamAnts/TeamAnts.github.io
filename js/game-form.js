@@ -53,11 +53,7 @@ export default class GameForm {
 
         randomAnswers.forEach(answer => {
             const answerCard = new AnswerCard(answer, selected => {
-<<<<<<< HEAD
-                console.log(selected.title);
-=======
                 
->>>>>>> 32cdb532c53c60e5e61410d93d9812cb28f5d35a
                 this.count++;
                 console.log(selected.title);
                 if(this.count === 10) {
