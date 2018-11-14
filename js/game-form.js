@@ -2,6 +2,7 @@ import AnswerCard from './answer-card.js';
 import html from './html.js';
 import musicApi from './music-api.js';
 import gameApi from './game-api.js';
+import playersApi from './players-api.js';
 
 const music = musicApi.getAll();
 
@@ -94,8 +95,9 @@ export default class GameForm {
         if(music[this.currentSongIndex].title === this.selected.title) {
             this.score += 100;
             console.log(this.score);
-
+            playersApi.update(this.score);
         }
+    
     }
     render() {
 
