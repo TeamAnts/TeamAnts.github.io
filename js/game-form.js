@@ -88,11 +88,12 @@ export default class GameForm {
         }
     }
     render() {
-        const currentSong = music[this.currentSongIndex];
+
         const dom = makeTemplate();
         const listen = dom.querySelector('button');
-        let newAudio = new Audio();
-        listen.addEventListener('click', function() {
+        listen.addEventListener('click', () => {
+            let newAudio = new Audio();
+            const currentSong = music[this.currentSongIndex];
             newAudio.src = currentSong.song;
             newAudio.play();
         }, true);
