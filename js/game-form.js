@@ -6,6 +6,7 @@ const music = musicApi.getAll();
 
 function makeTemplate() {
     return html`
+        
         <ul class="answer-list"></ul>
     `;
 }
@@ -18,6 +19,7 @@ export default class GameForm {
         this.answers = answers;
 
         this.answersPer = 4;
+        this.count = 0;
         this.rounds = 10;
         this.lastAnswers = [];
 
@@ -51,8 +53,7 @@ export default class GameForm {
 
         randomAnswers.forEach(answer => {
             const answerCard = new AnswerCard(answer, selected => {
-                const index = this.music.indexOf(selected);
-                console.log(index);
+                console.log(selected.title);
                 this.count++;
                 if(this.count === 10) {
                     window.location = './results.html';

@@ -2,6 +2,7 @@ import html from './html.js';
 import Header from './header.js';
 import Footer from './footer.js';
 import GameForm from './game-form.js';
+import MusicPlayer from './game-music.js';
 // import musicApi from './music-api.js';
 
 // const songs
@@ -29,6 +30,10 @@ class GameApp {
         const gameFormContainer = dom.querySelector('.game-form');
         const gameForm = new GameForm;
         gameFormContainer.appendChild(gameForm.render());
+
+        const musicPlayerContainer = dom.querySelector('.player');
+        const musicPlayer = new MusicPlayer;
+        musicPlayerContainer.appendChild(musicPlayer.render());
 
         
         return dom;
