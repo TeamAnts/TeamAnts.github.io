@@ -6,6 +6,7 @@ const music = musicApi.getAll();
 
 function makeTemplate() {
     return html`
+        
         <ul class="answer-list"></ul>
     `;
 }
@@ -18,6 +19,7 @@ export default class GameForm {
         this.answers = answers;
 
         this.answersPer = 4;
+        this.count = 0;
         this.rounds = 10;
         this.lastAnswers = [];
 
