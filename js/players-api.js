@@ -34,11 +34,11 @@ let players = [
     {
         name: 'mJordan',
         score: 50
-    },
-    {
-        name: 'Sarah',
-        score: 750
-    } 
+    }
+    // {
+    //     name: 'Sarah',
+    //     score: 750
+    // } 
 ];
 
 function checkStorage() {
