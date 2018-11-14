@@ -1,19 +1,27 @@
 import html from './html.js';
-// import playersApi from './players-api.js';
+import ResultsTableItem from './results-table-item.js';
 
 function makeTemplate() {
     return html`
-      <h3>Greatest of all time!</h3>
-      <li>
-       
-  `;
+     <ul class="top-ten-list"></ul>
+`;
 }
+export default class ResultsTable{
+    constructor(results) {
+        this.results = results;
+    }
 
-class ResultsTable {
     render() {
-        return makeTemplate();
+        const dom = makeTemplate();
+        const list = dom.querySelector('.top-ten-list');
 
+        this.results.forEach(player =>{
+            const resultsTableItem = new ResultsTableItem(player);
+            list.appendChild(resultsTableItem.render());
+        
+        });
+        return dom;
+        
     }
 }
 
-export default ResultsTable;

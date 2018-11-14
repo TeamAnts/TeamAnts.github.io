@@ -9,19 +9,26 @@ let players = [
     }
 ];
 
+function checkStorage() {
+    const json = localStorage.getItem('players');
+    if(json) {
+        players = JSON.parse(json);
+    }
+}
+
 function savePlayers() {
     localStorage.setItem('players', JSON.stringify(players));
 }
 
+
 const playersApi = {
     getAll() {
-        const json = localStorage.getItem('players');
-        if(json) {
-            players = JSON.parse(json);
-        }
+        checkStorage();
         return players;
     },
+
     add(player) {
+        checkStorage();
     // 1. add to our array
         player.score = 0;
         players.push(player);
