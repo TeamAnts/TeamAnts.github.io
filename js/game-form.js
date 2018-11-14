@@ -24,6 +24,7 @@ export default class GameForm {
         this.count = 0;
         this.rounds = 10;
         this.currentSongIndex = 0;
+        this.score = 0;
 
         this.music = music;
     }
@@ -41,7 +42,6 @@ export default class GameForm {
         }
         return array;
     }
-   
     getRandomAnswers() {
         const copy = this.music.slice();
         const randomAnswers = [];
@@ -66,12 +66,12 @@ export default class GameForm {
         const randomAnswers = this.getRandomAnswers();
         randomAnswers.forEach(answer => {
             const answerCard = new AnswerCard(answer, selected => {
+                this.selected = selected;
                 selectedAnswers.push(selected.title);
                 console.log(selectedAnswers);
                 this.count++;
+                this.addScore();
                 this.currentSongIndex++;
-                console.log('currentSong', this.currentSongIndex);
-                console.log(selected.title);
                 if(this.count === 10) {
                     gameApi.addGame(selectedAnswers);
                     window.location = './results.html';
@@ -85,6 +85,16 @@ export default class GameForm {
     clearAnswers() {
         while(this.list.lastElementChild) {
             this.list.lastElementChild.remove();
+        }
+    }
+    addScore() {
+        console.log('got here');
+        console.log('addScore in if', music[this.currentSongIndex].title);
+        console.log('selectedTitle', this.selected.title);
+        if(music[this.currentSongIndex].title === this.selected.title) {
+            this.score += 100;
+            console.log(this.score);
+
         }
     }
     render() {
