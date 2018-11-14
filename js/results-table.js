@@ -6,20 +6,34 @@ function makeTemplate() {
      <ul class="top-ten-list"></ul>
 `;
 }
+
 export default class ResultsTable{
     constructor(results) {
         this.results = results;
     }
 
+
     render() {
         const dom = makeTemplate();
         const list = dom.querySelector('.top-ten-list');
 
-        this.results.forEach(player =>{
+        let sortedArray = this.results.sort(function(a, b) {
+            return b.score - a.score;
+        });
+        console.log('yo', sortedArray);
+        const topTen = sortedArray.slice(0, 10);
+        topTen.forEach(player =>{
+            
+            
             const resultsTableItem = new ResultsTableItem(player);
             list.appendChild(resultsTableItem.render());
+                // console.log('fizz');
+            
+        }     
+        );
         
-        });
+
+        console.log(sortedArray);
         return dom;
         
     }

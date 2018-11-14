@@ -1,12 +1,44 @@
 let players = [
     {
+        name: 'Aaron',
+        score: 900
+    },
+    {
         name: 'Michael',
         score: 1100
     },
     {
-        name: 'Aaron',
+        name: 'Bob-Rita',
         score: 900
-    }
+    },
+    {
+        name: 'Joey-Bobby',
+        score: 250
+    },
+    {
+        name: 'Erin',
+        score: 950
+    },
+    {
+        name: 'Carmen',
+        score: 20000
+    },
+    {
+        name: 'Teonna',
+        score: 150
+    },
+    {
+        name: 'Kevin',
+        score: 100
+    },
+    {
+        name: 'mJordan',
+        score: 50
+    },
+    {
+        name: 'Sarah',
+        score: 750
+    } 
 ];
 
 function checkStorage() {
