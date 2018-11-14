@@ -9,9 +9,9 @@ function makeTemplate() {
     return html`
       <header></header>
       <main>
-          <section class="player-score">
+          <div class="player-score">
               <h2>YOUR SCORE</h2>
-          </section> 
+          </div> 
           <section class="top-ten">
               <h2>TOP 10 PLAYERS</h2>
               
