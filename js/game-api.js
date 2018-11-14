@@ -1,7 +1,12 @@
 let gameData = [];
+let musicData = [];
 
 function saveGame() {
     localStorage.setItem('gameData', JSON.stringify(gameData));
+}
+
+function saveMusic() {
+    localStorage.setItem('musicData', JSON.stringify(musicData));
 }
 
 const gameApi = {
@@ -12,11 +17,15 @@ const gameApi = {
         }
         return gameData;
     },
-    add(game) {
-        this.getAll();
+    addGame(game) {
+        // this.getAll();
         gameData.push(game);
 
         saveGame();
+    },
+    addSong(song) {
+        musicData.push(song);
+        saveMusic();
     }
 
 };

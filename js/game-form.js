@@ -7,7 +7,7 @@ const music = musicApi.getAll();
 
 function makeTemplate() {
     return html`
-        
+        <button id="button">Listen</button>
         <ul class="answer-list"></ul>
     `;
 }
@@ -23,33 +23,45 @@ export default class GameForm {
         this.answersPer = 4;
         this.count = 0;
         this.rounds = 10;
-        this.lastAnswers = [];
+        this.currentSongIndex = 0;
 
         this.music = music;
+    }
+    shuffleAnswers(array) {
+        let currentIndex = array.length;
+        let temporaryValue, randomIndex;
+
+        while(0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
     }
    
     getRandomAnswers() {
         const copy = this.music.slice();
         const randomAnswers = [];
+        randomAnswers.push(music[this.currentSongIndex]);
 
-        for(let i = 0; i < this.answersPer; i++) {
+        for(let i = 1; i < this.answersPer; i++) {
             const index = getRandomIndex(copy.length);
             const song = copy[index];
             copy.splice(index, 1);
 
-            if(this.lastAnswers.includes(song)) {
+            if(randomAnswers.includes(song)) {
                 i--;
                 continue;
             }
             else {
                 randomAnswers.push(song);
             }
-
         }
-        this.lastAnswers = randomAnswers;
-        return randomAnswers;
+        return this.shuffleAnswers(randomAnswers);
     }
-
     showRandomAnswers() {
         const randomAnswers = this.getRandomAnswers();
         randomAnswers.forEach(answer => {
@@ -57,9 +69,11 @@ export default class GameForm {
                 selectedAnswers.push(selected.title);
                 console.log(selectedAnswers);
                 this.count++;
+                this.currentSongIndex++;
+                console.log('currentSong', this.currentSongIndex);
                 console.log(selected.title);
                 if(this.count === 10) {
-                    gameApi.add(selectedAnswers);
+                    gameApi.addGame(selectedAnswers);
                     window.location = './results.html';
                 }
                 this.clearAnswers();
@@ -74,7 +88,14 @@ export default class GameForm {
         }
     }
     render() {
+        const currentSong = music[this.currentSongIndex];
         const dom = makeTemplate();
+        const listen = dom.querySelector('button');
+        let newAudio = new Audio();
+        listen.addEventListener('click', function() {
+            newAudio.src = currentSong.song;
+            newAudio.play();
+        }, true);
         this.list = dom.querySelector('ul');
         this.showRandomAnswers();
 
