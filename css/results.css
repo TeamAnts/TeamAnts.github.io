@@ -13,5 +13,15 @@ h2, h3 {
   border: dashed #fb2e01;
   width: 500px;
   margin: auto;
-  
+
+}
+
+.top-ten {
+  border: solid #fb2e01;
+  width: 500px;
+  margin: auto;
+}
+
+li {
+  text-align: center;
 }
