@@ -51,4 +51,6 @@ label[for="name"] {
     background-color:#6fcb9f;
     font-family:sans-serif;
     color:whitesmoke;
+    justify-content: center;
+}
 

@@ -12,8 +12,8 @@ function makeTemplate() {
           </section> 
           <section class="top-ten">
               <h2>TOP 10 PLAYERS</h2>
-              
           </section>
+          <a href="./index.html">PLAY AGAIN</a>
       </main>`;
 }
 
