@@ -20,7 +20,7 @@ export default class AnswerCard {
           
         const li = dom.querySelector('li');
         li.addEventListener('click', () => {
-            this.onSelect(this.answerCard);
+            this.onSelect(this.answer);
         });
         return dom;
     }
