@@ -9,12 +9,8 @@ function makeTemplate() {
               PLAYER NAME
               <input required name="playerName" id="playerName">
             </label>  
-
-            <label>  
-            <button>P L A Y</button>
-            </label>
-            <label>
-            <button>G E N R E</button>
+            <button id="popular">P O P</button>
+            <button id="hip-hop">H I P - H O P</button>
         </form>  
          
     `;
@@ -27,21 +23,21 @@ class LoginForm {
     render() {
         const dom = makeTemplate();
         const form = dom.querySelector('form');
+        const buttons = dom.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const elements = form.elements;
+                console.log('button', button);
+                const player = {
+                    name: elements.playerName.value,
+                    chosenGenre: button.id
+                };
 
-        form.addEventListener('submit', event => {
-            event.preventDefault();
-
-            const elements = form.elements;
-
-            const player = {
-                name: elements.playerName.value,
-            };
-
-            this.onSubmit(player);
-        
+                this.onSubmit(player);
+            
+            });
         });
-
-         
+        
         return dom;
     }
 }

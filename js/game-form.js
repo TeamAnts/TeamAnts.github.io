@@ -4,7 +4,11 @@ import musicApi from './music-api.js';
 import gameApi from './game-api.js';
 import playersApi from './players-api.js';
 
-const music = musicApi.getAll();
+const allPlayers = playersApi.getAll();
+const currentPlayer = allPlayers[allPlayers.length - 1];
+const playerGenre = currentPlayer.chosenGenre;
+
+const music = musicApi.getAll(playerGenre);
 
 function makeTemplate() {
     return html`
@@ -24,7 +28,7 @@ export default class GameForm {
         this.answersPer = 4;
         this.count = 0;
         this.rounds = 10;
-        this.currentSongIndex = getRandomIndex(10);
+        this.currentSongIndex = getRandomIndex(music.length);
         
         this.score = 0;
 
@@ -47,8 +51,15 @@ export default class GameForm {
     getRandomAnswers() {
         const copy = this.music.slice();
         const randomAnswers = [];
+
+        if(popularApi) {
+            this.randomAnswers = popularApi;
+        }
+
         randomAnswers.push(music[this.currentSongIndex]);
 
+
+        console.log('api', popularApi);
         for(let i = 1; i < this.answersPer; i++) {
             const index = getRandomIndex(copy.length);
             const song = copy[index];
@@ -75,7 +86,7 @@ export default class GameForm {
                 this.addScore();
                 this.currentSongIndex++;
                 console.log('hi', this.currentSongIndex);
-                if(this.currentSongIndex === 10) {
+                if(this.currentSongIndex === music.length) {
                     this.currentSongIndex = 0;
                 }
                 if(this.count === 10) {

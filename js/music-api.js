@@ -2,7 +2,7 @@ let songs = [
     {
         artist: 'Alicia Keys ',
         title: 'No One',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Alicia_Keys_No_One.wav'
         
     },
@@ -16,35 +16,35 @@ let songs = [
     {
         artist: 'Alicia Keys',
         title: 'Fallin',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Alicia_Keys_Fallin.wav'
 
     },
     {
         artist: 'Christina Aguilera',
         title: 'Genie In A Bottle',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Christina_Aguilera_Genie_In_A_Bottle.wav'
 
     },
     {
         artist: 'FKA Twigs',
         title: 'Two Weeks',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/FKA_Twigs_Two_Weeks.wav'
 
     },
     {
         artist: 'Grimes',
         title: 'Kill V. Maim',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Grimes_Kill_V_Maim.wav'
 
     },
     {
         artist: 'Lady Ga Ga',
         title: 'Perfect Illusion',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Lady_Gaga_Perfect_Illusion.wav'
 
     },
@@ -58,14 +58,14 @@ let songs = [
     {
         artist: 'Britney Spears',
         title: 'Baby One More Time',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Britney_Spears_Baby_One_More_Time.wav'
         
     },
     {
         artist: 'Cher',
         title: 'If I Could Turn Back Time',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Cher_If_I_Could_Turn_Back_Time.wav'
        
     },
@@ -79,42 +79,42 @@ let songs = [
     {
         artist: 'Ariana Grande',
         title: 'Get Well Soon',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Ariana_Grande_Get_Well_Soon.wav'
 
     },
     {
         artist: 'Selena Gomez',
         title: 'Back to You',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Selena_Gomez_Back_To_You.wav'
 
     },
     {
         artist: 'Madonna',
         title: 'Into the Groove',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Madonna_Into_the_Groove.wav'
 
     },
     {
         artist: 'Janet Jackson',
         title: 'Rhythm Nation',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Janet_Jackson_Rhythm_Nation.wav'
 
     },
     {
         artist: 'Snap',
         title: 'Rhythm is a Dancer',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Snap_Rhythm_is_a_Dancer.wav'
 
     },
     {
         artist: 'Beyoncé',
         title: 'Formation',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Beyoncé_Formation.wav'
 
     },
@@ -149,13 +149,13 @@ let songs = [
     {
         artist: 'Taylor Swift',
         title: 'State of Grace',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Taylor_Swift_State_of_Grace.wav'
 
     },
     {
         artist: 'The Lion King',
-        title: 'Hakuna',
+        title: 'Hakuna Matata',
         genre:'Kids',
         song: '/assets/music/The_Lion_King_Hakuna_Matata.wav'
        
@@ -163,15 +163,32 @@ let songs = [
     {
         artist: 'Katy Perry',
         title: 'Hey Hey Hey',
-        genre:'Pop',
+        genre:'popular',
         song: '/assets/music/Katy_Perry_Hey_Hey_Hey.wav'
 
     }
 ];
 
+// console.log(songs.filter(song => song.genre === 'popular'));
+
 const musicApi = {
-    getAll() {
-        return songs;
+    getAll(genre) {
+        let filtered = songs.filter(song => song.genre === genre);
+        console.log('filtered', filtered);
+        return filtered;
     }
-};
+}; 
+
+
+// const musicApi = {
+//     getAll() {
+//         return songs;
+//     }
+// };
+
+// songs.genre.forEach(function(songs) {
+//     console.log(songs.genre);
+
+// });
+ 
 export default musicApi;
