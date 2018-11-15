@@ -19,9 +19,18 @@ h2, h3 {
   margin-top: 40px;
 }
 
-li {
-  text-align: center;
+table {
+  border-collapse: collapse;
+  width: 100%;
+
 }
+td, th {
+  border: 1px solid #666547;
+  text-align: left;
+  padding: 15px;
+
+}
+
 
 .play-again a  {
   text-decoration: none;
@@ -33,6 +42,7 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   width: 140px;
   height: 60px;
   border-radius: 40px;
@@ -51,3 +61,7 @@ p {
   font-family: 'VT323', monospace;
   font-size: 30px;
 }
+=======
+}
+
+>>>>>>> ccd19bf948e89db57facf36d577fc32a13a0ee7d
