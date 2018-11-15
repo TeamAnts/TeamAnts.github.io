@@ -33,7 +33,7 @@ export default class GameForm {
         this.answersPer = 4;
         this.count = 0;
         this.rounds = 10;
-        this.currentSongIndex = getRandomIndex(10);
+        this.currentSongIndex = getRandomIndex(music.length);
         
         this.score = 0;
 
@@ -84,7 +84,7 @@ export default class GameForm {
                 this.addScore();
                 this.currentSongIndex++;
                 console.log('hi', this.currentSongIndex);
-                if(this.currentSongIndex === 10) {
+                if(this.currentSongIndex === music.length) {
                     this.currentSongIndex = 0;
                 }
                 if(this.count === 10) {

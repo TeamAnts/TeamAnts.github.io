@@ -5,15 +5,12 @@ footer {
     align-items: center;
     background: #FACB5C;
 }
-
 ul {
     list-style: none;
 }
-
 p {
     padding: 0 20px;
 }
-
 .nav {
     display:flex;
     justify-content: right;
