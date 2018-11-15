@@ -6,6 +6,7 @@ function makeTemplate(player) {
       <li class="top-ten-results">${player.name.toUpperCase()} ${player.score}
       
       </li>
+      
 `;
 }
 
