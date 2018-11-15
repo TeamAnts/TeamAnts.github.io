@@ -64,9 +64,17 @@ const playersApi = {
     // 1. add to our array
         player.score = 0;
         players.push(player);
-    // 2. save array to localStorage
+        // 2. save array to localStorage
         savePlayers();
     },
+    
+    update(score) {
+        const player = playersApi.getAll();
+        player[player.length - 1].score = score;    
+        
+        savePlayers();
+    }
+    
 };
 
 export default playersApi;
