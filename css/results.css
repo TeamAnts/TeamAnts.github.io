@@ -22,9 +22,18 @@ h2, h3 {
   margin: auto;
 }
 
-li {
-  text-align: center;
+table {
+  border-collapse: collapse;
+  width: 100%;
+
 }
+td, th {
+  border: 1px solid #666547;
+  text-align: left;
+  padding: 15px;
+
+}
+
 
 .play-again a  {
   text-decoration: none;
@@ -40,3 +49,4 @@ li {
   font-weight: bold;
   justify-content: center;
 }
+

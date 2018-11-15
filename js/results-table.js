@@ -1,10 +1,26 @@
 import html from './html.js';
 import ResultsTableItem from './results-table-item.js';
 
+// function makeTemplate() {
+//     return html`
+//      <ul class="top-ten-list"></ul>
+// `;
+// }
+
 function makeTemplate() {
     return html`
-     <ul class="top-ten-list"></ul>
-`;
+    <table>
+    <thead>
+      <tr>
+      <div id="tbl-headings">
+        <th id="player-name">PLAYER NAME</th>
+        <th id="player-score">S C O R E</th>
+      </div>  
+      </tr>
+     <thead>
+     <tbody class="top-ten-list"></tbody> 
+     </table>
+    `;
 }
 
 export default class ResultsTable{
