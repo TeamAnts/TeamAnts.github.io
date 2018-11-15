@@ -17,6 +17,7 @@ function makeTemplate() {
               <h2>TOP 10 PLAYERS</h2>
               
           </div>
+        <a href="./index.html"> PLAY AGAIN </a>   
       </main>
       <footer></footer>
       `;
