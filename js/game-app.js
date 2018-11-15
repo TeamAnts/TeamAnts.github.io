@@ -30,20 +30,6 @@ class GameApp {
 
         return dom;
     }
-    
-    // addScore() {
-    //     let score = 0;
-    //     const gameData = JSON.parse(localStorage.getItem('gameData'));
-    //     const musicData = JSON.parse(localStorage.getItem('musicData'));
-
-    //     for(let i = 0; i < gameData.length; i++) {
-    //         if(gameData[i] === musicData[i]) {
-    //             score += 100;
-    //             console.log(score);
-    //         }
-    //     }
-    //     return score;
-    // }
 }
 const gameApp = new GameApp;
 const root = document.getElementById('root');
