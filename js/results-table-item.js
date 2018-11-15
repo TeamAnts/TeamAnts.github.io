@@ -1,12 +1,21 @@
 import html from './html.js';
 
+// function makeTemplate(player) {
+//     return html`
+      
+//       <li class="top-ten-results">${player.name.toUpperCase()} ${player.score}
+      
+//       </li>
+      
+// `;
+// }
+
 function makeTemplate(player) {
     return html`
-      
-      <li class="top-ten-results">${player.name.toUpperCase()} ${player.score}
-      
-      </li>
-      
+        <tr class="top-ten-results">
+            <td>${player.name.toUpperCase()}</td>
+            <td>${player.score}</td>
+        </tr>
 `;
 }
 
