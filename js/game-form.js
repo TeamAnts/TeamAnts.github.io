@@ -24,7 +24,7 @@ export default class GameForm {
         this.answersPer = 4;
         this.count = 0;
         this.rounds = 10;
-        this.currentSongIndex = getRandomIndex(5);
+        this.currentSongIndex = getRandomIndex(10);
         
         this.score = 0;
 
@@ -74,7 +74,11 @@ export default class GameForm {
                 this.count++;
                 this.addScore();
                 this.currentSongIndex++;
-                if(this.count === 5) {
+                console.log('hi', this.currentSongIndex);
+                if(this.currentSongIndex === 10) {
+                    this.currentSongIndex = 0;
+                }
+                if(this.count === 10) {
                     gameApi.addGame(selectedAnswers);
                     window.location = './results.html';
                 }
