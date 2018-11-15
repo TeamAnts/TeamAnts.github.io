@@ -3,9 +3,10 @@ import html from './html.js';
 function makeTemplate(player) {
     return html`
       
-      <li class="top-ten-results">${player.name} ${player.score}
+      <li class="top-ten-results">${player.name.toUpperCase()} ${player.score}
       
       </li>
+      
 `;
 }
 

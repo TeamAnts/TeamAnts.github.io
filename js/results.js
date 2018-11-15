@@ -3,8 +3,7 @@ import html from './html.js';
 
 function makeTemplate(player) {
     return html`
-      <h3>CONGRATULATIONS!</h3>
-      <p> ${player.name} score is ${player.score}</p>
+      <h3>CONGRATULATIONS ${player.name.toUpperCase()}! You scored ${player.score} points</h3>
        
   `;
 }

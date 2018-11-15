@@ -20,14 +20,12 @@ export default class ResultsTable{
         let sortedArray = this.results.sort(function(a, b) {
             return b.score - a.score;
         });
-        console.log('yo', sortedArray);
         const topTen = sortedArray.slice(0, 10);
         topTen.forEach(player =>{
             
             
             const resultsTableItem = new ResultsTableItem(player);
             list.appendChild(resultsTableItem.render());
-                // console.log('fizz');
             
         }     
         );
