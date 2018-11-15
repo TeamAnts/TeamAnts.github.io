@@ -47,3 +47,15 @@ label[for="name"] {
 body {
     background: #FFEEAD;
 }
+#playerName{
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    outline: none;
+    width: auto;
+    min-width: 100%;
+    font-size: 1.5rem;
+    line-height: 3em;
+    border-bottom: 3px solid #333333;
+    background-color: transparent;
+  }

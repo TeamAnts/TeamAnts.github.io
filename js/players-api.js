@@ -13,7 +13,7 @@ let players = [
     },
     {
         name: 'Joey-Bobby',
-        score: 250
+        score: 200
     },
     {
         name: 'Erin',
@@ -25,7 +25,7 @@ let players = [
     },
     {
         name: 'Teonna',
-        score: 150
+        score: 100
     },
     {
         name: 'Kevin',

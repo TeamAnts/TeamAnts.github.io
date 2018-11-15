@@ -42,7 +42,6 @@ td, th {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
   width: 140px;
   height: 60px;
   border-radius: 40px;
@@ -61,7 +60,8 @@ p {
   font-family: 'VT323', monospace;
   font-size: 30px;
 }
-=======
+th {
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  color:#fb2e01;
 }
-
->>>>>>> ccd19bf948e89db57facf36d577fc32a13a0ee7d
