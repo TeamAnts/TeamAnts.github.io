@@ -9,7 +9,7 @@ let songs = [
     {
         artist: 'Beck',
         title: 'Loser',
-        genre:'alternative',
+        genre:'Alternative',
         song: '/assets/music/Beck_Loser.wav'
         
     },
@@ -121,28 +121,28 @@ let songs = [
     {
         artist: 'Prince',
         title: 'Little Red Corvette',
-        genre:'rb',
+        genre:'other',
         song: '/assets/music/Prince_Little_Red_Corvette.wav'
        
     },
     {
         artist: 'Sir Mix A Lot',
         title: 'Baby Got Back',
-        genre:'Rap',
+        genre:'other',
         song: '/assets/music/Sir_Mix_A_Lot_Baby_Got_Back.wav'
        
     },
     {
         artist: 'B-52s',
         title: 'Rock Lobster',
-        genre:'alternative',
+        genre:'other',
         song: '/assets/music/The_B-52s_Rock_Lobster.wav'
        
     },
     {
         artist: 'The Comodores',
         title: 'Easy',
-        genre:'rb',
+        genre:'other',
         song: '/assets/music/The_Commodores_Easy.wav'
        
     },
@@ -156,7 +156,7 @@ let songs = [
     {
         artist: 'The Lion King',
         title: 'Hakuna Matata',
-        genre:'kids',
+        genre:'other',
         song: '/assets/music/The_Lion_King_Hakuna_Matata.wav'
        
     },
