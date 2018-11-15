@@ -52,14 +52,8 @@ export default class GameForm {
         const copy = this.music.slice();
         const randomAnswers = [];
 
-        if(popularApi) {
-            this.randomAnswers = popularApi;
-        }
-
         randomAnswers.push(music[this.currentSongIndex]);
 
-
-        console.log('api', popularApi);
         for(let i = 1; i < this.answersPer; i++) {
             const index = getRandomIndex(copy.length);
             const song = copy[index];

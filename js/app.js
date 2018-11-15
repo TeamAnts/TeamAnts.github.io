@@ -27,7 +27,7 @@ export default class App {
             
             // console.log('player', player);
             // Add here to add player to person-api.js
-            // window.location = './game.html';
+            window.location = './game.html';
         });
       
         formContainer.appendChild(form.render());

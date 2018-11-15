@@ -10,7 +10,7 @@ function makeTemplate() {
               <input required name="playerName" id="playerName">
             </label>  
             <button id="popular">P O P</button>
-            <button id="hip-hop">H I P - H O P</button>
+            <button id="alternative">H I P - H O P</button>
         </form>  
          
     `;
