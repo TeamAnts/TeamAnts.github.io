@@ -12,7 +12,17 @@ const music = musicApi.getAll(playerGenre);
 
 function makeTemplate() {
     return html`
-        <button id="button">Listen</button>
+    <section class="player" id="playbuttonofdoom">
+    <div class="box"></div>
+    <div class="circle"></div>
+    <div class="player-mechanics">
+        <div class="tone-arm"></div>
+        <div class="stylus"></div>
+    </div>
+    <div class="vinyl-record-inner"><img src="./assets/ACL_logo.webp"></div>
+    <div class="vinyl-record"></div>
+</section>
+        <!--<button id="button">Listen</button>-->
         <ul class="answer-list"></ul>
     `;
 }
@@ -102,25 +112,62 @@ export default class GameForm {
         console.log('got here');
         console.log('addScore in if', music[this.currentSongIndex].title);
         console.log('selectedTitle', this.selected.title);
+        let sound = new Audio();
         if(music[this.currentSongIndex].title === this.selected.title) {
             this.score += 100;
             console.log(this.score);
             playersApi.update(this.score);
+
+            const soundEffect = './assets/music/quiz-show-buzzer-01.mp3';
+            sound.src = soundEffect;
+            console.log('right answer');
         }
+        else {
+            const soundEffect = './assets/music/record-scratch-01.mp3';
+            sound.src = soundEffect;
+            console.log('wrong answer');
+        }
+        sound.play();
     
     }
     render() {
 
         const dom = makeTemplate();
-        const listen = dom.querySelector('button');
-        listen.addEventListener('click', () => {
+        // const listen = dom.querySelector('button');
+        // listen.addEventListener('click', () => {
+        //     let newAudio = new Audio();
+        //     const currentSong = music[this.currentSongIndex];
+        //     newAudio.src = currentSong.song;
+        //     newAudio.play();
+        // }, true);
+        this.list = dom.querySelector('ul');
+        this.showRandomAnswers();
+
+
+        const playerMechanic = dom.querySelector('.player-mechanics');
+        const vinylRecord = dom.querySelector('.vinyl-record');
+        const innerRecord = dom.querySelector('.vinyl-record-inner');
+
+        const playbuttonofdoom = dom.getElementById('playbuttonofdoom');
+        playbuttonofdoom.addEventListener('click', () => {
+    
+            playerMechanic.classList.add('player-mechanic-on');
+            vinylRecord.classList.add('spinning');
+            innerRecord.classList.add('spinning');
+                
+
             let newAudio = new Audio();
             const currentSong = music[this.currentSongIndex];
             newAudio.src = currentSong.song;
             newAudio.play();
-        }, true);
-        this.list = dom.querySelector('ul');
-        this.showRandomAnswers();
+            window.setTimeout(reset, 1000);
+        });
+    
+        function reset(){
+            playerMechanic.classList.remove('player-mechanic-on');
+            vinylRecord.classList.remove('spinning');
+            innerRecord.classList.remove('spinning');
+        }
 
         return dom;
     }
