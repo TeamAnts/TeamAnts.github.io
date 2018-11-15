@@ -1,7 +1,6 @@
 footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     height: 15vh;
     align-items: center;
     background: #FACB5C;
@@ -16,5 +15,16 @@ p {
 }
 
 .nav {
-    padding: 0 20px;
+    display:flex;
+    justify-content: right;
+    padding: 0 20px;    
+}
+.nav a{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color:white;
+
+}
+.nav a:hover {
+    color:#fb2e01;
 }

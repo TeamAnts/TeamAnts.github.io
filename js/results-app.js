@@ -15,15 +15,14 @@ function makeTemplate() {
           <br>
           <div class="top-ten">
               <h2>TOP 10 PLAYERS</h2>
-              
           </div>
           <div class="play-again">
           <a href="./index.html"> PLAY AGAIN </a>   
-            </div>
-          
+          </div>         
       </main>
       <footer></footer>
       `;
+
 }
 
 class ResultsApp {
