@@ -13,6 +13,8 @@ function makeTemplate() {
             <label>  
             <button>P L A Y</button>
             </label>
+            <label>
+            <button>G E N R E</button>
         </form>  
          
     `;
