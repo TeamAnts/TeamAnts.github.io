@@ -97,11 +97,22 @@ export default class GameForm {
         console.log('got here');
         console.log('addScore in if', music[this.currentSongIndex].title);
         console.log('selectedTitle', this.selected.title);
+        let sound = new Audio();
         if(music[this.currentSongIndex].title === this.selected.title) {
             this.score += 100;
             console.log(this.score);
             playersApi.update(this.score);
+
+            const soundEffect = './assets/music/quiz-show-buzzer-01.mp3';
+            sound.src = soundEffect;
+            console.log('right answer');
         }
+        else {
+            const soundEffect = './assets/music/record-scratch-01.mp3';
+            sound.src = soundEffect;
+            console.log('wrong answer');
+        }
+        sound.play();
     
     }
     render() {
