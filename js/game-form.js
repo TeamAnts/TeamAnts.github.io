@@ -9,16 +9,15 @@ const music = musicApi.getAll();
 function makeTemplate() {
     return html`
     <section class="player" id="playbuttonofdoom">
-    <div class="box"></div>
-    <div class="circle"></div>
-    <div class="player-mechanics">
-        <div class="tone-arm"></div>
-        <div class="stylus"></div>
-    </div>
-    <div class="vinyl-record-inner"><img src="./assets/ACL_logo.webp"></div>
-    <div class="vinyl-record"></div>
-</section>
-        <!--<button id="button">Listen</button>-->
+        <div class="box"></div>
+        <div class="circle"></div>
+        <div class="player-mechanics">
+            <div class="tone-arm"></div>
+            <div class="stylus"></div>
+        </div>
+        <div class="vinyl-record-inner"><img src="./assets/ACL_logo.webp"></div>
+        <div class="vinyl-record"></div>
+    </section>
         <ul class="answer-list"></ul>
     `;
 }

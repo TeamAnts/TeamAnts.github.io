@@ -37,6 +37,9 @@ form {
     padding-bottom: 100px;
     display: inline-flex;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 

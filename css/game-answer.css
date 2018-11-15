@@ -1,12 +1,14 @@
 .answer-list {
-	display: flex;
-    height: 40vh;
-    flex-direction: column;
+    display: flex;
+    height: 30vh;
+    flex-direction: row;
     justify-content: space-evenly;
     font-size: 30px;
     margin-top: 10px;
     font-family: 'Ubuntu', sans-serif;
     color: #070600;
+    width: 80vw;
+    margin: 25px;
 }
 .game-form {
 	display: flex;

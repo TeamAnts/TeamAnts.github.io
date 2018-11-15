@@ -52,40 +52,47 @@ body {
 	margin-top: 40px;
     flex-direction: column;
 }
+.album-wrapper {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+	align-items: center;
+	padding-right: 10px;
+}
 .aaron-profile{
-	display:none;
+	visibility: hidden;
 	font-family: 'Abel', sans-serif;
 	font-size: 24px;
 	margin-left: 150px;
 }
 .aaron:hover + .aaron-profile{
-	display:block;
+	visibility: visible;
 }
 .michael-profile{
-	display:none;
+	visibility: hidden;
 	font-family: 'Abel', sans-serif;
 	font-size: 24px;
 	margin-left: 150px;
 }
 .michael:hover + .michael-profile{
-	display:block;
+	visibility: visible;
 }
 .teonna-profile{
-	display:none;
+	visibility: hidden;
 	font-family: 'Abel', sans-serif;
 	font-size: 24px;
 	margin-left: 150px;
 }
 .teonna:hover + .teonna-profile{
-	display:block;
+	visibility: visible;
 }
 .carmen-profile{
-	display:none;
+	visibility: hidden;
 	font-family: 'Abel', sans-serif;
 	font-size: 24px;
 	margin-left: 150px;
 	margin-bottom: 40px;
 }
 .carmen:hover + .carmen-profile{
-	display:block;
+	visibility: visible;
 }
