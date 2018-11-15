@@ -22,9 +22,18 @@ h2, h3 {
   margin: auto;
 }
 
-tr {
-  text-align: center;
+table {
+  border-collapse: collapse;
+  width: 100%;
+
 }
+td, th {
+  border: 1px solid #666547;
+  text-align: left;
+  padding: 15px;
+
+}
+
 
 .play-again a  {
   text-decoration: none;
@@ -41,20 +50,3 @@ tr {
   justify-content: center;
 }
 
-table thead td {
-  font-weight: bolder;
-  background: white;
-  color:black;
-}
-
-table td {
-  padding: 8px 8px;
-  text-align: right;
-}
-
-table {
-  width: 100%;
-  min-width: 400px;
-  max-width: 700px;
-  border-collapse: collapse;
-}
