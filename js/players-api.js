@@ -5,7 +5,7 @@ let players = [
     },
     {
         name: 'Michael',
-        score: 1100
+        score: 900
     },
     {
         name: 'Bob-Rita',
@@ -17,11 +17,11 @@ let players = [
     },
     {
         name: 'Erin',
-        score: 950
+        score: 900
     },
     {
         name: 'Carmen',
-        score: 20000
+        score: 900
     },
     {
         name: 'Teonna',
@@ -33,11 +33,11 @@ let players = [
     },
     {
         name: 'mJordan',
-        score: 50
+        score: 100
     },
     {
         name: 'Sarah',
-        score: 750
+        score: 700
     } 
 ];
 

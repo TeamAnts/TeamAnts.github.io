@@ -1,7 +1,7 @@
 footer {
     display: flex;
     flex-direction: row;
-    height: 15vh;
+    height: 10vh;
     align-items: center;
     background: #FACB5C;
 }
@@ -20,9 +20,9 @@ p {
     padding: 0 20px;    
 }
 .nav a{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Abel', sans-serif;
     text-decoration: none;
-    color:white;
+    color:black;
 
 }
 .nav a:hover {
