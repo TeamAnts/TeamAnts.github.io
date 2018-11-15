@@ -1,12 +1,6 @@
 import html from './html.js';
 import ResultsTableItem from './results-table-item.js';
 
-// function makeTemplate() {
-//     return html`
-//      <ul class="top-ten-list"></ul>
-// `;
-// }
-
 function makeTemplate() {
     return html`
     <table>
@@ -14,7 +8,7 @@ function makeTemplate() {
       <tr>
       <div id="tbl-headings">
         <th id="player-name">PLAYER NAME</th>
-        <th id="player-score">S C O R E</th>
+        <th id="player-score">SCORE</th>
       </div>  
       </tr>
      <thead>

@@ -5,16 +5,10 @@ function makeTemplate() {
     return html`
        
         <form id="login" name="player">
-            <label for="name">
-              PLAYER NAME
-              <input required name="playerName" id="playerName">
-            </label>  
-
+              <input required name="playerName" id="playerName" placeholder="Enter your name" autocomplete="off">
             <label>  
-            <button>P L A Y</button>
+            <button>PLAY</button>
             </label>
-            <label>
-            <button>G E N R E</button>
         </form>  
          
     `;

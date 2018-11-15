@@ -1,25 +1,22 @@
 main {
-  background-color: #6fcb9f;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: #FFEEAD;
+  font-family: 'Abel', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 h2, h3 {
   text-align: center;
+  font-size: 27px;
+  margin: 0px;
 }
 
 .player-score {
-  border: dashed #fb2e01;
-  width: 500px;
   margin: auto;
-
-}
-
-.top-ten {
-  border: solid #fb2e01;
-  width: 500px;
-  margin: auto;
+  font-family: 'VT323', monospace;
+  margin-top: 40px;
 }
 
 table {
@@ -40,13 +37,31 @@ td, th {
   display: flex;
   color: #fffeb3;
 }
-
 .play-again {
-  padding: 25px 15px;
-  max-width: 50px;
-  background-color:#fb2e01;
-  border-radius: 100%;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  width: 140px;
+  height: 60px;
+  border-radius: 40px;
+  margin: 40px;
+  background-color:#fb2e01;
+  
 }
-
+p {
+  margin-top: 15px;
+  font-family: 'VT323', monospace;
+  font-size: 7em;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.top-ten-results {
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+}
+th {
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  color:#fb2e01;
+}

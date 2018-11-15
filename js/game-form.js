@@ -9,16 +9,15 @@ const music = musicApi.getAll();
 function makeTemplate() {
     return html`
     <section class="player" id="playbuttonofdoom">
-    <div class="box"></div>
-    <div class="circle"></div>
-    <div class="player-mechanics">
-        <div class="tone-arm"></div>
-        <div class="stylus"></div>
-    </div>
-    <div class="vinyl-record-inner"><img src="./assets/ACL_logo.webp"></div>
-    <div class="vinyl-record"></div>
-</section>
-        <!--<button id="button">Listen</button>-->
+        <div class="box"></div>
+        <div class="circle"></div>
+        <div class="player-mechanics">
+            <div class="tone-arm"></div>
+            <div class="stylus"></div>
+        </div>
+        <div class="vinyl-record-inner"><img src="./assets/ACL_logo.webp"></div>
+        <div class="vinyl-record"></div>
+    </section>
         <ul class="answer-list"></ul>
     `;
 }
@@ -34,7 +33,7 @@ export default class GameForm {
         this.answersPer = 4;
         this.count = 0;
         this.rounds = 10;
-        this.currentSongIndex = getRandomIndex(10);
+        this.currentSongIndex = getRandomIndex(music.length);
         
         this.score = 0;
 
@@ -85,7 +84,7 @@ export default class GameForm {
                 this.addScore();
                 this.currentSongIndex++;
                 console.log('hi', this.currentSongIndex);
-                if(this.currentSongIndex === 10) {
+                if(this.currentSongIndex === music.length) {
                     this.currentSongIndex = 0;
                 }
                 if(this.count === 10) {

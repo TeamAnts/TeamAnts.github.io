@@ -10,15 +10,12 @@ function makeTemplate() {
       <header></header>
       <main>
           <div class="player-score">
-              <h2>YOUR SCORE</h2>
+              <p>YOUR SCORE</p>
           </div> 
-          <br>
           <div class="top-ten">
-              <h2>TOP 10 PLAYERS</h2>
+              <p>TOP 10 PLAYERS</p>
           </div>
-          <div class="play-again">
-          <a href="./index.html"> PLAY AGAIN </a>   
-          </div>         
+          <button class="play-again"><a href="./index.html">PLAY AGAIN</a></button>
       </main>
       <footer></footer>
       `;
