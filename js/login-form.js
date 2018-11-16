@@ -1,5 +1,4 @@
 import html from './html.js';
-// send me to login app
 
 function makeTemplate() {
     return html`
@@ -49,7 +48,6 @@ class LoginForm {
                     checkedRadio = genre[i].value;
                 }
             }
-
             console.log('genre', genre);
             const player = {
                 name: elements.playerName.value,

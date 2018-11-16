@@ -27,7 +27,6 @@ export default class App {
 
             window.location = './game.html';
         });
-      
         formContainer.appendChild(form.render());
 
         const footerContainer = dom.querySelector('footer');

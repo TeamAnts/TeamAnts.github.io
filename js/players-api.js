@@ -52,7 +52,6 @@ function savePlayers() {
     localStorage.setItem('players', JSON.stringify(players));
 }
 
-
 const playersApi = {
     getAll() {
         checkStorage();
