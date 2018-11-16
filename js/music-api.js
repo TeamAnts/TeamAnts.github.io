@@ -9,7 +9,7 @@ let songs = [
     {
         artist: 'Beck',
         title: 'Loser',
-        genre:'Alternative',
+        genre:'other',
         song: '/assets/music/Beck_Loser.wav'
         
     },
@@ -30,14 +30,14 @@ let songs = [
     {
         artist: 'FKA Twigs',
         title: 'Two Weeks',
-        genre:'popular',
+        genre:'other',
         song: '/assets/music/FKA_Twigs_Two_Weeks.wav'
 
     },
     {
         artist: 'Grimes',
         title: 'Kill V. Maim',
-        genre:'popular',
+        genre:'other',
         song: '/assets/music/Grimes_Kill_V_Maim.wav'
 
     },
@@ -51,7 +51,7 @@ let songs = [
     {
         artist: 'Beethoven',
         title: '9th Symphony',
-        genre:'Classical',
+        genre:'other',
         song: '/assets/music/Beethoven_9th_Symphony.wav'
         
     },
@@ -65,14 +65,14 @@ let songs = [
     {
         artist: 'Cher',
         title: 'If I Could Turn Back Time',
-        genre:'popular',
+        genre:'other',
         song: '/assets/music/Cher_If_I_Could_Turn_Back_Time.wav'
        
     },
     {
         artist: 'Fleetwood Mac',
         title: 'Dreams',
-        genre:'Rock',
+        genre:'other',
         song: '/assets/music/Fleetwood_Mac_Dreams.wav'
        
     },
@@ -100,7 +100,7 @@ let songs = [
     {
         artist: 'Janet Jackson',
         title: 'Rhythm Nation',
-        genre:'popular',
+        genre:'other',
         song: '/assets/music/Janet_Jackson_Rhythm_Nation.wav'
 
     },
@@ -114,7 +114,7 @@ let songs = [
     {
         artist: 'Beyonce',
         title: 'Formation',
-        genre:'popular',
+        genre:'other',
         song: '/assets/music/Beyonce_Formation.wav'
 
     },
@@ -156,7 +156,7 @@ let songs = [
     {
         artist: 'The Lion King',
         title: 'Hakuna Matata',
-        genre:'random',
+        genre:'other',
         song: '/assets/music/The_Lion_King_Hakuna_Matata.wav'
        
     },
@@ -168,6 +168,7 @@ let songs = [
 
     }
 ];
+
 
 const musicApi = {
     getAll(genre) {
