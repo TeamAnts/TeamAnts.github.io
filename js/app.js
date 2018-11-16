@@ -22,8 +22,9 @@ export default class App {
         headerContainer.appendChild(header.render());
 
         const formContainer = dom.querySelector('form');
-        const form = new LoginForm (player => {
+        const form = new LoginForm(player => {
             playerApi.add(player);
+
             window.location = './game.html';
         });
       
