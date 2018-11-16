@@ -8,15 +8,12 @@ function makeTemplate(player) {
         </tr>
 `;
 }
-
 class ResultsTableItem {
     constructor(player){
-
         this.player = player;
     }
     render() {
         return makeTemplate(this.player);
     }
 }
-
 export default ResultsTableItem;

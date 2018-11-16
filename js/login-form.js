@@ -2,13 +2,8 @@ import html from './html.js';
 
 function makeTemplate() {
     return html`
-       
         <form id="login" name="player">
-
-            <label for="playerName">
-            PLAYER NAME
-            <input name="playerName" id="playerName" placeholder="Enter your name" autocomplete="off"required/>
-            </label>  
+            <input name="playerName" id="playerName" placeholder="Enter your name" autocomplete="off"required/> 
             <div class=genre>
                 <label for="popular">
                     Pop
@@ -20,9 +15,7 @@ function makeTemplate() {
                 </label>
                 <button type="submit"> Play </button>
             </div>
-
-        </form>  
-         
+        </form>
     `;
 }
 
@@ -36,10 +29,7 @@ class LoginForm {
         
         form.addEventListener('submit', (event) => {
             event.preventDefault();
-                
-            console.log('gethere');
 
-            //check radio button or after elements
             const elements = form.elements;
             const genre = document.getElementsByName('genre');
             let checkedRadio;
@@ -48,15 +38,11 @@ class LoginForm {
                     checkedRadio = genre[i].value;
                 }
             }
-            console.log('genre', genre);
             const player = {
                 name: elements.playerName.value,
                 chosenGenre: checkedRadio
             };
-            console.log('player', player);
-    
-            this.onSubmit(player);
-        
+            this.onSubmit(player); 
         });
         return dom;
     }

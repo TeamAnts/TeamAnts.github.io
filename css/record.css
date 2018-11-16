@@ -53,9 +53,7 @@ section.player{
     width: 300px;
     height:300px;
     top:-30px;
-    left: calc(49% - 172.5px);
-    /* border: 3px solid red;  */
-   
+    left: calc(49% - 172.5px);   
     z-index:5;
 }
 .player-mechanic-on {
@@ -64,8 +62,7 @@ section.player{
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-direction: forward;
-}
-    
+} 
 /*Outer Record*/
 .vinyl-record{
     width: 345px;
@@ -117,10 +114,8 @@ section.player{
         transform:rotate(360deg);
     }
 }
-
-
 /*Inner Record*/
-.vinyl-record-inner{
+.vinyl-record-inner {
     position:absolute;
     display:flex;
     align-items: center;
@@ -133,7 +128,6 @@ section.player{
     background: #fc6d6c;
     
 }
-
 img {
     display:block;
     width:50%;

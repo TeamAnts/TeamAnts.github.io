@@ -4,24 +4,22 @@ import ResultsTableItem from './results-table-item.js';
 function makeTemplate() {
     return html`
     <table>
-    <thead>
-      <tr>
-      <div id="tbl-headings">
-        <th id="player-name">PLAYER NAME</th>
-        <th id="player-score">SCORE</th>
-      </div>  
-      </tr>
-     <thead>
-     <tbody class="top-ten-list"></tbody> 
+        <thead>
+            <tr>
+                <div id="tbl-headings">
+                    <th id="player-name">PLAYER NAME</th>
+                    <th id="player-score">SCORE</th>
+                </div>  
+            </tr>
+        <thead>
+        <tbody class="top-ten-list"></tbody> 
      </table>
     `;
 }
-
 export default class ResultsTable{
     constructor(results) {
         this.results = results;
     }
-
     render() {
         const dom = makeTemplate();
         const list = dom.querySelector('.top-ten-list');
@@ -35,7 +33,6 @@ export default class ResultsTable{
             const resultsTableItem = new ResultsTableItem(player);
             list.appendChild(resultsTableItem.render());
         });
-        console.log(sortedArray);
         return dom;
     }
 }

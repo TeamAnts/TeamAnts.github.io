@@ -1,5 +1,4 @@
 export default function html(strings, ...values) {
- 
     let htmlString = String.raw(strings, ...values);
     
     var template = document.createElement('template');

@@ -18,15 +18,12 @@ const gameApi = {
         return gameData;
     },
     addGame(game) {
-        // this.getAll();
         gameData.push(game);
-
         saveGame();
     },
     addSong(song) {
         musicData.push(song);
         saveMusic();
     }
-
 };
 export default gameApi;
