@@ -111,6 +111,7 @@ export default class GameForm {
             this.list.appendChild(answerCard.render());
         });
     }
+    
     clearAnswers() {
         while(this.list.lastElementChild) {
             this.list.lastElementChild.remove();
@@ -136,28 +137,26 @@ export default class GameForm {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
         this.showRandomAnswers();
-
-
+        
         const playerMechanic = dom.querySelector('.player-mechanics');
         const vinylRecord = dom.querySelector('.vinyl-record');
         const innerRecord = dom.querySelector('.vinyl-record-inner');
-
+        
         const playbuttonofdoom = dom.getElementById('playbuttonofdoom');
         playbuttonofdoom.addEventListener('click', () => {
-            //if not clicked, can't select a song
-            // if clicked can select
+            
             playerMechanic.classList.add('player-mechanic-on');
             vinylRecord.classList.add('spinning');
             innerRecord.classList.add('spinning');
-                
-
+            
             let newAudio = new Audio();
             const currentSong = music[this.currentSongIndex];
             newAudio.src = currentSong.song;
             newAudio.play();
             window.setTimeout(reset, 1000);
         });
-    
+       
+        
         function reset(){
             playerMechanic.classList.remove('player-mechanic-on');
             vinylRecord.classList.remove('spinning');

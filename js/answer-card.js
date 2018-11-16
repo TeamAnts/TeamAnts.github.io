@@ -11,6 +11,7 @@ export default class AnswerCard {
     constructor(answer, onSelect) {
         this.answer = answer;
         this.onSelect = onSelect;
+        // this.clicked = no
     }
     render() {
         const dom = makeTemplate(this.answer);
@@ -20,7 +21,11 @@ export default class AnswerCard {
         const li = dom.querySelector('li');
         li.addEventListener('click', () => {
             this.onSelect(this.answer);
+            //hide whole object being displayed
+            
         });
         return dom;
     }
 }
+
+// create method the answer-card to reset 
