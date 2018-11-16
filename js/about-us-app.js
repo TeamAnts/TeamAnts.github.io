@@ -14,8 +14,7 @@ function makeTemplate() {
                     </div>
                     <div class="aaron-profile">
                     <h4>Aaron</h4>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Climber, traveler, software developer, and amateur chef.
                     </div>
                 </div>
 
@@ -26,8 +25,7 @@ function makeTemplate() {
                     </div>
                     <div class="michael-profile">
                     <h4>Michael</h4>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Musician, Recovering Art School Student, Chef, Father, Miscreant. 
                     </div>
                 </div>
 
@@ -38,8 +36,7 @@ function makeTemplate() {
                     </div>
                     <div class="teonna-profile">
                     <h4>Teonna</h4>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ultra runner, student, nurse and collector of unnecessary crafting supplies. 
                     </div>
                 </div>
 
@@ -50,12 +47,14 @@ function makeTemplate() {
                     </div>
                     <div class="carmen-profile">
                     <h4>Carmen</h4>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Mother,  student,  software developer, food and nutrition enthusiast. 
                     </div>
                 </div>
+            </div>
+            <div class="play-again-wrapper">
+                <button class="play-again"><a href="./index.html">Play Game</a></button>
+            </div>
             <footer></footer>
-        </div>
     `;
 }
 
