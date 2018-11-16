@@ -112,10 +112,15 @@ let songs = [
 
     },
     {
-        artist: 'Beyoncé',
+        artist: 'Beyonce',
         title: 'Formation',
+<<<<<<< HEAD
         genre:'popular',
         song: '/assets/music/Beyoncé_Formation.wav'
+=======
+        genre:'Pop',
+        song: '/assets/music/Beyonce_Formation.wav'
+>>>>>>> master
 
     },
     {

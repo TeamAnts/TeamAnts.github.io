@@ -1,9 +1,3 @@
-
-* {
-    padding:0;
-    margin:0 auto;
-    
-}
 h3 {
     text-align: center;
     /* padding: 30px; */
@@ -11,7 +5,7 @@ h3 {
 }
 section.player{
     position:relative;
-    margin:25% auto 0;
+    margin-top: 50px;
     /*Throw margin on the container to have all elements ride along PARAMETERS ARE  4:T-R-B-L, 3:T-LR-B 2:TB-LR 1:ALL, */
     padding: 0;
 }
@@ -71,7 +65,7 @@ section.player{
     animation-direction: forward;
 }
     
-/*Outter Record*/
+/*Outer Record*/
 .vinyl-record{
     width: 345px;
     height: 345px;
@@ -82,11 +76,7 @@ section.player{
     repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
     background-size: 50% 100%, 100% 50%, 100% 100%;
     z-index: 6;
-    
-  /* transform: rotate(3deg); */
-   /* transform: rotate(0.3rad);/ */
-   /* transform: rotate(3grad); */ 
-   /* transform: rotate(.03turn);  */
+
 }
 .spinning {
     animation-name: spin;
@@ -147,4 +137,5 @@ img {
     display:block;
     width:50%;
     filter:invert(100%);
+    margin: 0 auto;
 }

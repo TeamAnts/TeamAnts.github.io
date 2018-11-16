@@ -5,12 +5,14 @@ function makeTemplate() {
     return html`
        
         <form id="login" name="player">
+
             <label for="playerName">
             PLAYER NAME
-            <input name="playerName" id="playerName" required/>
+            <input name="playerName" id="playerName" placeholder="Enter your name" autocomplete="off"required/>
             </label>  
             <input type="radio" id="popular" value="pop"P O P />
             <input type="radio" id="other" value="other"H I P - H O P/>
+
         </form>  
          
     `;

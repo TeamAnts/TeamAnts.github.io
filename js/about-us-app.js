@@ -5,16 +5,55 @@ import Footer from './footer.js';
 
 function makeTemplate() {
     return html`
-        <div class="app">
             <header></header>
-            <div class="about-us-card">
-                <img src="https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif" alt="">
-                <p> Lorem Ipsum és un text de farciment usat per la indústria de la tipografia i la impremta. 
-                Lorem Ipsum ha estat el text estàndard de la indústria des de l'any 1500, quan un impressor desconegut va fer servir una galerada 
-                de text i la va mesclar per crear un llibre de mostres tipogràfiques. No només ha sobreviscut cinc segles, sinó que ha fet el salt cap a la creació de 
-                tipus de lletra electrònics, romanent essencialment sense canvis. Es va popularitzar l'any 1960 amb el llançament de fulls Letraset que contenien passatges de 
-                Lorem Ipsum, i més recentment amb programari d'autoedició com Aldus Pagemaker que inclou versions de Lorem Ipsum.</p>
-            </div>
+            <div class="wrapper">
+                <div class="album-wrapper">
+                    <div class="album aaron">
+                        <span class="vinyl"></span>
+                        <span class="cover cover1"></span>
+                    </div>
+                    <div class="aaron-profile">
+                    <h4>Aaron</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    </div>
+                </div>
+
+                <div class="album-wrapper">
+                    <div class="album michael">
+                        <span class="vinyl"></span>
+                        <span class="cover cover2"></span>
+                    </div>
+                    <div class="michael-profile">
+                    <h4>Michael</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    </div>
+                </div>
+
+                <div class="album-wrapper">
+                    <div class="album teonna">
+                        <span class="vinyl"></span>
+                        <span class="cover cover3"></span>
+                    </div>
+                    <div class="teonna-profile">
+                    <h4>Teonna</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    </div>
+                </div>
+
+                <div class="album-wrapper">
+                    <div class="album carmen">
+                        <span class="vinyl"></span>
+                        <span class="cover cover4"></span>
+                    </div>
+                    <div class="carmen-profile">
+                    <h4>Carmen</h4>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    </div>
+                </div>
             <footer></footer>
         </div>
     `;
