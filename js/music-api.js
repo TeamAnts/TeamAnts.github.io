@@ -115,7 +115,7 @@ let songs = [
         artist: 'Beyonce',
         title: 'Formation',
         genre:'popular',
-        song: '/assets/music/Beyoncé_Formation.wav'
+        song: '/assets/music/Beyonce_Formation.wav'
 
     },
     {
