@@ -8,6 +8,7 @@ section.player{
     margin-top: 50px;
     /*Throw margin on the container to have all elements ride along PARAMETERS ARE  4:T-R-B-L, 3:T-LR-B 2:TB-LR 1:ALL, */
     padding: 0;
+    cursor: pointer;
 }
 .box{
     position:absolute;
