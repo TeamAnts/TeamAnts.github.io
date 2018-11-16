@@ -9,7 +9,6 @@ function makeTemplate() {
             </nav>
     `;
 }
-
 export default class Footer {
     render() {
         return makeTemplate();

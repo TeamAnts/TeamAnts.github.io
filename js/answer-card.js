@@ -11,21 +11,14 @@ export default class AnswerCard {
     constructor(answer, onSelect) {
         this.answer = answer;
         this.onSelect = onSelect;
-        // this.clicked = no
     }
     render() {
         const dom = makeTemplate(this.answer);
-        // this.listItem = dom.querySelector('h4');
-        // this.listItem = this.answerCard.title;
-          
         const li = dom.querySelector('li');
+
         li.addEventListener('click', () => {
-            this.onSelect(this.answer);
-            //hide whole object being displayed
-            
+            this.onSelect(this.answer);           
         });
         return dom;
     }
 }
-
-// create method the answer-card to reset 

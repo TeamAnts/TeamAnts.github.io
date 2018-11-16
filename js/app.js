@@ -13,7 +13,6 @@ function makeTemplate() {
         </div>
     `;
 }
-
 export default class App {
     render(){
         const dom = makeTemplate();
@@ -24,7 +23,6 @@ export default class App {
         const formContainer = dom.querySelector('form');
         const form = new LoginForm(player => {
             playerApi.add(player);
-
             window.location = './game.html';
         });
         formContainer.appendChild(form.render());
@@ -37,7 +35,6 @@ export default class App {
     }
 
 }
-
-
 const app = new App;
+
 document.getElementById('root').appendChild(app.render()); 

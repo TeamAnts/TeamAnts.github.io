@@ -5,7 +5,6 @@ function makeTemplate() {
             <h1> NAME THAT <span>TUNE</span> </h1>
     `;
 }
-
 export default class Header {
     render() {
         return makeTemplate();

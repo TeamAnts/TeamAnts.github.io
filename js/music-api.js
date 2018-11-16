@@ -173,10 +173,8 @@ let songs = [
 const musicApi = {
     getAll(genre) {
         let filtered = songs.filter(song => song.genre === genre);
-        console.log('genre', genre);
-        console.log('filter', songs.filter(song => song.genre === genre));
+
         return filtered;
     }
 }; 
-
 export default musicApi;

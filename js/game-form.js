@@ -9,8 +9,6 @@ const currentPlayer = allPlayers[allPlayers.length - 1];
 const playerGenre = currentPlayer.chosenGenre;
 
 const music = musicApi.getAll(playerGenre);
-console.log('music', musicApi.getAll);
-console.log('musicApi', music);
 function makeTemplate() {
     return html`
     <section class="player" id="playbuttonofdoom">
@@ -36,14 +34,11 @@ const selectedAnswers = [];
 export default class GameForm {
     constructor(answers) {
         this.answers = answers;
-
         this.answersPer = 4;
         this.count = 0;
         this.rounds = 10;
         this.currentSongIndex = getRandomIndex(music.length);
-        
         this.score = 0;
-
         this.music = music;
     }
     shuffleAnswers(array) {
@@ -62,16 +57,12 @@ export default class GameForm {
     }
     getRandomAnswers() {
         const copy = this.music.slice();
-        console.log('this music', this.music);
         const randomAnswers = [];
 
         randomAnswers.push(music[this.currentSongIndex]);
-
         for(let i = 1; i < this.answersPer; i++) {
             const index = getRandomIndex(copy.length);
             const song = copy[index];
-            console.log('song', song);
-            // copy.splice(index, 1);
 
             if(randomAnswers.includes(song)) {
                 i--;
@@ -95,8 +86,6 @@ export default class GameForm {
 
                 const roundCounter = document.querySelector('.hidden');
                 roundCounter.textContent = `${this.count} / ${this.rounds}`;
-                console.log(roundCounter);
-
 
                 if(this.currentSongIndex === music.length) {
                     this.currentSongIndex = 0;
@@ -111,7 +100,6 @@ export default class GameForm {
             this.list.appendChild(answerCard.render());
         });
     }
-    
     clearAnswers() {
         while(this.list.lastElementChild) {
             this.list.lastElementChild.remove();
@@ -154,15 +142,12 @@ export default class GameForm {
             newAudio.src = currentSong.song;
             newAudio.play();
             window.setTimeout(reset, 1000);
-        });
-       
-        
+        }); 
         function reset(){
             playerMechanic.classList.remove('player-mechanic-on');
             vinylRecord.classList.remove('spinning');
             innerRecord.classList.remove('spinning');
         }
-
         return dom;
     }
 }

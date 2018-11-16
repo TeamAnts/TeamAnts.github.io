@@ -16,8 +16,6 @@
 	background-size: cover;
 	background-position: center center;
 }
-
-
 .cover1{
 	background-image:url(../assets/images/fleetwoodMacRumours.jpg);	
 }
@@ -117,5 +115,4 @@ body {
 	border-radius: 40px;
 	margin: 40px;
 	background-color: #fb2e01;
-
 }

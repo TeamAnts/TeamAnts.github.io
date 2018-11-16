@@ -19,7 +19,6 @@ function makeTemplate() {
       </main>
       <footer></footer>
       `;
-
 }
 
 class ResultsApp {
@@ -28,7 +27,6 @@ class ResultsApp {
         this.currentPlayer = this.results[this.results.length - 1 ];
     }
     render() {
-        
         const dom = makeTemplate();
 
         const headerContainer = dom.querySelector('header');
@@ -50,7 +48,6 @@ class ResultsApp {
         return dom;
     }
 }
-
 const reportApp = new ResultsApp();
 const root = document.getElementById('root');
 root.appendChild(reportApp.render());
