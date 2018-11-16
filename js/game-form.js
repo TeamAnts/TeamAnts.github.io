@@ -89,11 +89,6 @@ export default class GameForm {
             const answerCard = new AnswerCard(answer, selected => {
                 this.selected = selected;
                 selectedAnswers.push(selected.title);
-<<<<<<< HEAD
-                console.log('selected answer', selectedAnswers);
-=======
-
->>>>>>> master
                 this.count++;
                 this.addScore();
                 this.currentSongIndex++;
