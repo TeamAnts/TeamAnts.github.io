@@ -9,8 +9,8 @@ function makeTemplate() {
             PLAYER NAME
             <input name="playerName" id="playerName" required/>
             </label>  
-            <button type="radio" id="popular" value="pop">P O P</button>
-            <button type="radio" id="other" value="other">H I P - H O P</button>
+            <input type="radio" id="popular" value="pop"P O P />
+            <input type="radio" id="other" value="other"H I P - H O P/>
         </form>  
          
     `;
