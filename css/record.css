@@ -1,31 +1,10 @@
-h3 {
-    text-align: center;
-    /* padding: 30px; */
-  /*when using absolute positioning the positioning will rely on the nearest generational relative that already has positioning*/  
-}
 section.player{
     position:relative;
     margin-top: 50px;
-    /*Throw margin on the container to have all elements ride along PARAMETERS ARE  4:T-R-B-L, 3:T-LR-B 2:TB-LR 1:ALL, */
     padding: 0;
     cursor: pointer;
 }
-.box{
-    position:absolute;
-    background-color: #cfbd97;
-    width:400px;
-    height:400px;
-    top:-10px;
-    left: calc(50% - 205px);
-    z-index: -2;
-}
-.circle {
-   width: 300px; 
- 
-   background-color: #fc6d6c;
-   left: calc(50% - 205px);
-   z-index: 1;
-}
+
 .tone-arm {
         position: absolute;
         display: block;
@@ -63,7 +42,6 @@ section.player{
     animation-fill-mode: forwards;
     animation-direction: forward;
 } 
-/*Outer Record*/
 .vinyl-record{
     width: 345px;
     height: 345px;
@@ -86,7 +64,7 @@ section.player{
 }
 @keyframes  tonearm {
     0% {
-        /*rotate from 0 to zero lose */transform:rotate( 0deg);
+    transform:rotate( 0deg);
 
     }
     10% {
@@ -103,8 +81,8 @@ section.player{
         transform:rotate(-0deg);
         transform-origin: top left;
         top: 0px;
-    }
-    }
+        }
+}
 
 @keyframes spin {
     from {
@@ -114,7 +92,6 @@ section.player{
         transform:rotate(360deg);
     }
 }
-/*Inner Record*/
 .vinyl-record-inner {
     position:absolute;
     display:flex;
