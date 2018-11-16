@@ -144,7 +144,8 @@ export default class GameForm {
 
         const playbuttonofdoom = dom.getElementById('playbuttonofdoom');
         playbuttonofdoom.addEventListener('click', () => {
-    
+            //if not clicked, can't select a song
+            // if clicked can select
             playerMechanic.classList.add('player-mechanic-on');
             vinylRecord.classList.add('spinning');
             innerRecord.classList.add('spinning');

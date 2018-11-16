@@ -2,7 +2,6 @@ import Header from './header.js';
 import html from './html.js';
 import Footer from './footer.js';
 
-
 function makeTemplate() {
     return html`
             <header></header>
@@ -73,8 +72,6 @@ export default class App {
     }
 
 }
-
-
 
 const app = new App;
 

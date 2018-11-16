@@ -51,7 +51,6 @@ class ResultsApp {
     }
 }
 
-
 const reportApp = new ResultsApp();
 const root = document.getElementById('root');
 root.appendChild(reportApp.render());
