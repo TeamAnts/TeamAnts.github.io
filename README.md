@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NAME THAT TUNE Game App
 ## Contributors
 * Aaron Dennis
@@ -32,3 +33,5 @@
 
 ### Special Thanks
 * To our dedicated and very helpful TAs: Kevin, Injoong, Mariah, Sarah and Ryan!!!
+=======
+>>>>>>> parent of a4fe585... Add Readme file
