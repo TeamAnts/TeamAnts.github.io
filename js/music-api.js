@@ -156,7 +156,7 @@ let songs = [
     {
         artist: 'The Lion King',
         title: 'Hakuna Matata',
-        genre:'other',
+        genre:'random',
         song: '/assets/music/The_Lion_King_Hakuna_Matata.wav'
        
     },

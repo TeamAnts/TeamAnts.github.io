@@ -23,6 +23,8 @@ function makeTemplate() {
         <div class="vinyl-record-inner"><img src="./assets/ACL_logo.webp"></div>
         <div class="vinyl-record"></div>
     </section>
+    <div class="hidden">Click the record to listen!</div>
+    <div class="round-counter"></div>
         <ul class="answer-list"></ul>
     `;
 }
@@ -87,11 +89,20 @@ export default class GameForm {
             const answerCard = new AnswerCard(answer, selected => {
                 this.selected = selected;
                 selectedAnswers.push(selected.title);
+<<<<<<< HEAD
                 console.log('selected answer', selectedAnswers);
+=======
+
+>>>>>>> master
                 this.count++;
                 this.addScore();
                 this.currentSongIndex++;
-                console.log('hi', this.currentSongIndex);
+
+                const roundCounter = document.querySelector('.hidden');
+                roundCounter.textContent = `${this.count} / ${this.rounds}`;
+                console.log(roundCounter);
+
+
                 if(this.currentSongIndex === music.length) {
                     this.currentSongIndex = 0;
                 }
@@ -111,37 +122,23 @@ export default class GameForm {
         }
     }
     addScore() {
-        console.log('got here');
-        console.log('addScore in if', music[this.currentSongIndex].title);
-        console.log('selectedTitle', this.selected.title);
         let sound = new Audio();
         if(music[this.currentSongIndex].title === this.selected.title) {
             this.score += 100;
-            console.log(this.score);
             playersApi.update(this.score);
 
             const soundEffect = './assets/music/quiz-show-buzzer-01.mp3';
             sound.src = soundEffect;
-            console.log('right answer');
         }
         else {
             const soundEffect = './assets/music/record-scratch-01.mp3';
             sound.src = soundEffect;
-            console.log('wrong answer');
         }
         sound.play();
     
     }
     render() {
-
         const dom = makeTemplate();
-        // const listen = dom.querySelector('button');
-        // listen.addEventListener('click', () => {
-        //     let newAudio = new Audio();
-        //     const currentSong = music[this.currentSongIndex];
-        //     newAudio.src = currentSong.song;
-        //     newAudio.play();
-        // }, true);
         this.list = dom.querySelector('ul');
         this.showRandomAnswers();
 
