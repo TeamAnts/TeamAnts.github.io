@@ -5,7 +5,7 @@ let players = [
     },
     {
         name: 'Michael',
-        score: 1100
+        score: 900
     },
     {
         name: 'Bob-Rita',
@@ -13,19 +13,19 @@ let players = [
     },
     {
         name: 'Joey-Bobby',
-        score: 250
+        score: 200
     },
     {
         name: 'Erin',
-        score: 950
+        score: 900
     },
     {
         name: 'Carmen',
-        score: 20000
+        score: 900
     },
     {
         name: 'Teonna',
-        score: 150
+        score: 100
     },
     {
         name: 'Kevin',
@@ -33,11 +33,11 @@ let players = [
     },
     {
         name: 'mJordan',
-        score: 50
+        score: 100
     },
     {
         name: 'Sarah',
-        score: 750
+        score: 700
     } 
 ];
 
@@ -51,7 +51,6 @@ function checkStorage() {
 function savePlayers() {
     localStorage.setItem('players', JSON.stringify(players));
 }
-
 
 const playersApi = {
     getAll() {

@@ -1,0 +1,42 @@
+.answer-list {
+    display: flex;
+    height: 30vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 30px;
+    margin-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #070600;
+    width: 80vw;
+    margin: 25px;
+}
+.game-form {
+	display: flex;
+    height: 70vh;
+    align-items: center;
+    flex-direction: column;
+    background: #FFEEAD;
+}
+#button {
+	height: 100px;
+    width: 100px;
+    margin-top: 40px;
+    cursor: pointer;
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+}
+li {
+	cursor: pointer;
+}
+.hidden{
+	display: block;
+	font-family: 'Abel', sans-serif;
+	font-size: 24px;
+    margin: 5px 0px;
+}
+.round-counter {
+    display: block;
+    font-family: 'Abel', sans-serif;
+	font-size: 24px;
+    margin: 5px 0px;
+}

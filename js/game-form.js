@@ -4,21 +4,27 @@ import musicApi from './music-api.js';
 import gameApi from './game-api.js';
 import playersApi from './players-api.js';
 
-const music = musicApi.getAll();
+const allPlayers = playersApi.getAll();
+const currentPlayer = allPlayers[allPlayers.length - 1];
+const playerGenre = currentPlayer.chosenGenre;
 
+const music = musicApi.getAll(playerGenre);
+console.log('music', musicApi.getAll);
+console.log('musicApi', music);
 function makeTemplate() {
     return html`
     <section class="player" id="playbuttonofdoom">
-    <div class="box"></div>
-    <div class="circle"></div>
-    <div class="player-mechanics">
-        <div class="tone-arm"></div>
-        <div class="stylus"></div>
-    </div>
-    <div class="vinyl-record-inner"><img src="./assets/ACL_logo.webp"></div>
-    <div class="vinyl-record"></div>
-</section>
-        <!--<button id="button">Listen</button>-->
+        <div class="box"></div>
+        <div class="circle"></div>
+        <div class="player-mechanics">
+            <div class="tone-arm"></div>
+            <div class="stylus"></div>
+        </div>
+        <div class="vinyl-record-inner"><img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/v1/983693/axmqlpjyo3zmeszdr9qt.png"></div>
+        <div class="vinyl-record"></div>
+    </section>
+    <div class="hidden">Click the record to listen!</div>
+    <div class="round-counter"></div>
         <ul class="answer-list"></ul>
     `;
 }
@@ -34,7 +40,7 @@ export default class GameForm {
         this.answersPer = 4;
         this.count = 0;
         this.rounds = 10;
-        this.currentSongIndex = getRandomIndex(10);
+        this.currentSongIndex = getRandomIndex(music.length);
         
         this.score = 0;
 
@@ -56,13 +62,16 @@ export default class GameForm {
     }
     getRandomAnswers() {
         const copy = this.music.slice();
+        console.log('this music', this.music);
         const randomAnswers = [];
+
         randomAnswers.push(music[this.currentSongIndex]);
 
         for(let i = 1; i < this.answersPer; i++) {
             const index = getRandomIndex(copy.length);
             const song = copy[index];
-            copy.splice(index, 1);
+            console.log('song', song);
+            // copy.splice(index, 1);
 
             if(randomAnswers.includes(song)) {
                 i--;
@@ -80,12 +89,16 @@ export default class GameForm {
             const answerCard = new AnswerCard(answer, selected => {
                 this.selected = selected;
                 selectedAnswers.push(selected.title);
-                console.log(selectedAnswers);
                 this.count++;
                 this.addScore();
                 this.currentSongIndex++;
-                console.log('hi', this.currentSongIndex);
-                if(this.currentSongIndex === 10) {
+
+                const roundCounter = document.querySelector('.hidden');
+                roundCounter.textContent = `${this.count} / ${this.rounds}`;
+                console.log(roundCounter);
+
+
+                if(this.currentSongIndex === music.length) {
                     this.currentSongIndex = 0;
                 }
                 if(this.count === 10) {
@@ -98,66 +111,52 @@ export default class GameForm {
             this.list.appendChild(answerCard.render());
         });
     }
+    
     clearAnswers() {
         while(this.list.lastElementChild) {
             this.list.lastElementChild.remove();
         }
     }
     addScore() {
-        console.log('got here');
-        console.log('addScore in if', music[this.currentSongIndex].title);
-        console.log('selectedTitle', this.selected.title);
         let sound = new Audio();
         if(music[this.currentSongIndex].title === this.selected.title) {
             this.score += 100;
-            console.log(this.score);
             playersApi.update(this.score);
 
             const soundEffect = './assets/music/quiz-show-buzzer-01.mp3';
             sound.src = soundEffect;
-            console.log('right answer');
         }
         else {
             const soundEffect = './assets/music/record-scratch-01.mp3';
             sound.src = soundEffect;
-            console.log('wrong answer');
         }
         sound.play();
     
     }
     render() {
-
         const dom = makeTemplate();
-        // const listen = dom.querySelector('button');
-        // listen.addEventListener('click', () => {
-        //     let newAudio = new Audio();
-        //     const currentSong = music[this.currentSongIndex];
-        //     newAudio.src = currentSong.song;
-        //     newAudio.play();
-        // }, true);
         this.list = dom.querySelector('ul');
         this.showRandomAnswers();
-
-
+        
         const playerMechanic = dom.querySelector('.player-mechanics');
         const vinylRecord = dom.querySelector('.vinyl-record');
         const innerRecord = dom.querySelector('.vinyl-record-inner');
-
+        
         const playbuttonofdoom = dom.getElementById('playbuttonofdoom');
         playbuttonofdoom.addEventListener('click', () => {
-    
+            
             playerMechanic.classList.add('player-mechanic-on');
             vinylRecord.classList.add('spinning');
             innerRecord.classList.add('spinning');
-                
-
+            
             let newAudio = new Audio();
             const currentSong = music[this.currentSongIndex];
             newAudio.src = currentSong.song;
             newAudio.play();
             window.setTimeout(reset, 1000);
         });
-    
+       
+        
         function reset(){
             playerMechanic.classList.remove('player-mechanic-on');
             vinylRecord.classList.remove('spinning');

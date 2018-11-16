@@ -1,9 +1,121 @@
-img {
-    height: 200px;
-    width: 200px;
+.vinyl {
+	position:absolute;
+	height:300px;
+	width:300px;
+	z-index: -11;
+	display: block;
+	transition: all .25s ease-out;
+	background-image:url(../assets/images/vinyl.png);
+	
+}
+.cover{
+	position:absolute;
+	height:250px;
+	width:250px;
+	z-index: 33;
+	background-size: cover;
+	background-position: center center;
 }
 
-.about-us-card {
-    display: flex;
-    width: 80vw;
+
+.cover1{
+	background-image:url(../assets/images/fleetwoodMacRumours.jpg);	
+}
+.cover2{
+	background-image:url(../assets/images/billyidolalbum.jpg);	
+}
+.cover3{
+	background-image:url(../assets/images/kiss-destroyer.jpg);	
+}
+.cover4{
+	background-image:url(../assets/images/madonna.jpeg);	
+}
+.album {
+	height:300px;
+	width:300px;
+	float:left;
+	margin-right:200px;
+    margin-top:50px;
+    padding-left: 150px;
+}
+div.album:hover .vinyl {
+	transform:  translateX(150px) rotate(195deg);
+}
+footer {
+    clear: both;
+}
+body {
+	background: #FFEEAD;
+}
+.wrapper {
+	display: flex;
+	margin-top: 40px;
+	flex-direction: column;
+	align-items: center;
+	width: 80vw;
+}
+.album-wrapper {
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+	align-items: center;
+	padding-right: 10px;
+}
+.play-again-wrapper {
+	display: flex;
+    justify-content: center;
+}
+.play-again a  {
+	text-decoration: none;
+	display: flex;
+	color: #fffeb3;
+  }
+.aaron-profile{
+	visibility: hidden;
+	font-family: 'Abel', sans-serif;
+	font-size: 24px;
+	margin-left: 150px;
+}
+.aaron:hover + .aaron-profile{
+	visibility: visible;
+}
+.michael-profile{
+	visibility: hidden;
+	font-family: 'Abel', sans-serif;
+	font-size: 24px;
+	margin-left: 150px;
+}
+.michael:hover + .michael-profile{
+	visibility: visible;
+}
+.teonna-profile{
+	visibility: hidden;
+	font-family: 'Abel', sans-serif;
+	font-size: 24px;
+	margin-left: 150px;
+}
+.teonna:hover + .teonna-profile{
+	visibility: visible;
+}
+.carmen-profile{
+	visibility: hidden;
+	font-family: 'Abel', sans-serif;
+	font-size: 24px;
+	margin-left: 150px;
+	margin-bottom: 40px;
+}
+.carmen:hover + .carmen-profile{
+	visibility: visible;
+}
+.play-again {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 60px;
+	border-radius: 40px;
+	margin: 40px;
+	background-color: #fb2e01;
+
 }
