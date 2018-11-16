@@ -28,3 +28,15 @@
 li {
 	cursor: pointer;
 }
+.hidden{
+	display: block;
+	font-family: 'Abel', sans-serif;
+	font-size: 24px;
+    margin: 5px 0px;
+}
+.round-counter {
+    display: block;
+    font-family: 'Abel', sans-serif;
+	font-size: 24px;
+    margin: 5px 0px;
+}
