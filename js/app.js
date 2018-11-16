@@ -24,12 +24,7 @@ export default class App {
         const formContainer = dom.querySelector('form');
         const form = new LoginForm(player => {
             playerApi.add(player);
-<<<<<<< HEAD
-            
-            // console.log('player', player);
-            // Add here to add player to person-api.js
-=======
->>>>>>> master
+
             window.location = './game.html';
         });
       

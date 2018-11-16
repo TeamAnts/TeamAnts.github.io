@@ -9,7 +9,8 @@ const currentPlayer = allPlayers[allPlayers.length - 1];
 const playerGenre = currentPlayer.chosenGenre;
 
 const music = musicApi.getAll(playerGenre);
-
+console.log('music', musicApi.getAll);
+console.log('musicApi', music);
 function makeTemplate() {
     return html`
     <section class="player" id="playbuttonofdoom">
@@ -59,6 +60,7 @@ export default class GameForm {
     }
     getRandomAnswers() {
         const copy = this.music.slice();
+        console.log('this music', this.music);
         const randomAnswers = [];
 
         randomAnswers.push(music[this.currentSongIndex]);
@@ -66,7 +68,8 @@ export default class GameForm {
         for(let i = 1; i < this.answersPer; i++) {
             const index = getRandomIndex(copy.length);
             const song = copy[index];
-            copy.splice(index, 1);
+            console.log('song', song);
+            // copy.splice(index, 1);
 
             if(randomAnswers.includes(song)) {
                 i--;
@@ -84,7 +87,7 @@ export default class GameForm {
             const answerCard = new AnswerCard(answer, selected => {
                 this.selected = selected;
                 selectedAnswers.push(selected.title);
-                console.log(selectedAnswers);
+                console.log('selected answer', selectedAnswers);
                 this.count++;
                 this.addScore();
                 this.currentSongIndex++;

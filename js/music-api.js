@@ -114,13 +114,8 @@ let songs = [
     {
         artist: 'Beyonce',
         title: 'Formation',
-<<<<<<< HEAD
         genre:'popular',
         song: '/assets/music/Beyoncé_Formation.wav'
-=======
-        genre:'Pop',
-        song: '/assets/music/Beyonce_Formation.wav'
->>>>>>> master
 
     },
     {
@@ -174,26 +169,13 @@ let songs = [
     }
 ];
 
-// console.log(songs.filter(song => song.genre === 'popular'));
-
 const musicApi = {
     getAll(genre) {
         let filtered = songs.filter(song => song.genre === genre);
-        console.log('filtered', filtered);
+        console.log('genre', genre);
+        console.log('filter', songs.filter(song => song.genre === genre));
         return filtered;
     }
 }; 
 
-
-// const musicApi = {
-//     getAll() {
-//         return songs;
-//     }
-// };
-
-// songs.genre.forEach(function(songs) {
-//     console.log(songs.genre);
-
-// });
- 
 export default musicApi;

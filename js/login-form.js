@@ -10,8 +10,17 @@ function makeTemplate() {
             PLAYER NAME
             <input name="playerName" id="playerName" placeholder="Enter your name" autocomplete="off"required/>
             </label>  
-            <input type="radio" id="popular" value="pop"P O P />
-            <input type="radio" id="other" value="other"H I P - H O P/>
+            <div class=genre>
+                <label for="popular">
+                    Pop
+                    <input type="radio" name="genre" id="popular" value="popular"/>
+                </label>
+                <label for="other">
+                    Other
+                    <input type="radio" name="genre" id="other" value="other"/>
+                </label>
+                <button type="submit"> Play </button>
+            </div>
 
         </form>  
          
@@ -25,27 +34,33 @@ class LoginForm {
     render() {
         const dom = makeTemplate();
         const form = dom.querySelector('form');
-        const buttons = dom.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                console.log('gethere');
-                event.preventDefault();
-
-                const elements = form.elements;
-                console.log('button', button);
-                const player = {
-                    name: elements.playerName.value,
-                    chosenGenre: button.id
-                };
-                this.chosenGenre = button.id;
-                console.log('chosen genre', this.chosenGenre);
-                this.onSubmit(player);
-            
-            });
-        });
         
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+                
+            console.log('gethere');
+
+            //check radio button or after elements
+            const elements = form.elements;
+            const genre = document.getElementsByName('genre');
+            let checkedRadio;
+            for(let i = 0; i < genre.length; i ++) {
+                if(genre[i].checked === true) {
+                    checkedRadio = genre[i].value;
+                }
+            }
+
+            console.log('genre', genre);
+            const player = {
+                name: elements.playerName.value,
+                chosenGenre: checkedRadio
+            };
+            console.log('player', player);
+    
+            this.onSubmit(player);
+        
+        });
         return dom;
     }
 }
-
 export default LoginForm;
