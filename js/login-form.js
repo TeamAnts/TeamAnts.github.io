@@ -13,11 +13,11 @@ function makeTemplate() {
             <div class=genre>
                 <label for="popular">
                     Pop
-                    <input type="radio" name="genre" id="popular" value="popular"/>
+                    <input required type="radio" name="genre" id="popular" value="popular"/>
                 </label>
                 <label for="other">
                     Other
-                    <input type="radio" name="genre" id="other" value="other"/>
+                    <input required type="radio" name="genre" id="other" value="other"/>
                 </label>
                 <button type="submit"> Play </button>
             </div>
