@@ -6,32 +6,27 @@ function makeTemplate() {
     <table>
         <thead>
             <tr>
-                <div id="tbl-headings">
-                    <th id="player-name">PLAYER NAME</th>
-                    <th id="player-score">SCORE</th>
-                </div>  
+                <th>PLAYER NAME</th>
+                <th>SCORE</th>
             </tr>
         <thead>
-        <tbody class="top-ten-list"></tbody> 
+        <tbody></tbody> 
      </table>
     `;
 }
 export default class ResultsTable{
     constructor(results) {
-        this.results = results;
+        this.topTen = results
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 10);
     }
     render() {
         const dom = makeTemplate();
-        const list = dom.querySelector('.top-ten-list');
+        const tableBody = dom.querySelector('tbody');
 
-        let sortedArray = this.results.sort(function(a, b) {
-            return b.score - a.score;
-        });
-        const topTen = sortedArray.slice(0, 10);
-        topTen.forEach(player =>{
-            
+        this.topTen.forEach(player =>{
             const resultsTableItem = new ResultsTableItem(player);
-            list.appendChild(resultsTableItem.render());
+            tableBody.appendChild(resultsTableItem.render());
         });
         return dom;
     }

@@ -5,10 +5,10 @@ import GameForm from './game-form.js';
 
 function makeTemplate() {
     return html`
-    <header></header>
-    <div class="player"></div>
-    <div class="game-form"></div>
-    <footer></footer>
+        <header></header>
+        <div class="player"></div>
+        <div class="game-form"></div>
+        <footer></footer>
     `;
 }
 

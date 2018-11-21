@@ -1,13 +1,13 @@
 let gameData = [];
-let musicData = [];
+// let musicData = [];
 
 function saveGame() {
     localStorage.setItem('gameData', JSON.stringify(gameData));
 }
 
-function saveMusic() {
-    localStorage.setItem('musicData', JSON.stringify(musicData));
-}
+// function saveMusic() {
+//     localStorage.setItem('musicData', JSON.stringify(musicData));
+// }
 
 const gameApi = {
     getAll() {
@@ -21,9 +21,10 @@ const gameApi = {
         gameData.push(game);
         saveGame();
     },
-    addSong(song) {
-        musicData.push(song);
-        saveMusic();
-    }
+    // I don't think this is used
+    // addSong(song) {
+    //     musicData.push(song);
+    //     saveMusic();
+    // }
 };
 export default gameApi;
