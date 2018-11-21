@@ -4,32 +4,33 @@ import musicApi from './music-api.js';
 import gameApi from './game-api.js';
 import playersApi from './players-api.js';
 
-const allPlayers = playersApi.getAll();
-const currentPlayer = allPlayers[allPlayers.length - 1];
-const playerGenre = currentPlayer.chosenGenre;
+const genre = playersApi.getCurrent().chosenGenre;
+const music = musicApi.getGenre(genre);
 
-const music = musicApi.getAll(playerGenre);
 function makeTemplate() {
     return html`
-    <section class="player" id="playbuttonofdoom">
-        <div class="box"></div>
-        <div class="circle"></div>
-        <div class="player-mechanics">
-            <div class="tone-arm"></div>
-            <div class="stylus"></div>
-        </div>
-        <div class="vinyl-record-inner"><img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/v1/983693/axmqlpjyo3zmeszdr9qt.png"></div>
-        <div class="vinyl-record"></div>
-    </section>
-    <div class="hidden">Click the record to listen!</div>
-    <div class="round-counter"></div>
+        <section class="player" id="play-button-of-doom">
+            <div class="box"></div>
+            <div class="circle"></div>
+            <div class="player-mechanics">
+                <div class="tone-arm"></div>
+                <div class="stylus"></div>
+            </div>
+            <div class="vinyl-record-inner"><img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/v1/983693/axmqlpjyo3zmeszdr9qt.png"></div>
+            <div class="vinyl-record"></div>
+        </section>
+        <div class="hidden">Click the record to listen!</div>
+        <div class="round-counter"></div>
         <ul class="answer-list"></ul>
     `;
 }
+
 function getRandomIndex(length) {
     return Math.floor(Math.random() * length);
 }
-const selectedAnswers = []; 
+
+// scope is too broad here
+// const selectedAnswers = []; 
 
 export default class GameForm {
     constructor(answers) {
@@ -43,16 +44,16 @@ export default class GameForm {
     }
     shuffleAnswers(array) {
         let currentIndex = array.length;
-        let temporaryValue, randomIndex;
 
         while(0 !== currentIndex) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
+            let randomIndex = getRandomIndex(currentIndex);
             currentIndex -= 1;
 
-            temporaryValue = array[currentIndex];
+            let temporaryValue = array[currentIndex];
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
         }
+
         return array;
     }
     getRandomAnswers() {
@@ -76,15 +77,18 @@ export default class GameForm {
     }
     showRandomAnswers() {
         const randomAnswers = this.getRandomAnswers();
+        const selectedAnswers = [];
+        const roundCounter = document.querySelector('.hidden');
+ 
         randomAnswers.forEach(answer => {
             const answerCard = new AnswerCard(answer, selected => {
                 this.selected = selected;
+
                 selectedAnswers.push(selected.title);
                 this.count++;
                 this.addScore();
                 this.currentSongIndex++;
 
-                const roundCounter = document.querySelector('.hidden');
                 roundCounter.textContent = `${this.count} / ${this.rounds}`;
 
                 if(this.currentSongIndex === music.length) {
@@ -106,48 +110,51 @@ export default class GameForm {
         }
     }
     addScore() {
-        let sound = new Audio();
+        let soundEffect = '';
+
         if(music[this.currentSongIndex].title === this.selected.title) {
             this.score += 100;
             playersApi.update(this.score);
-
-            const soundEffect = './assets/music/quiz-show-buzzer-01.mp3';
-            sound.src = soundEffect;
+            
+            soundEffect = './assets/music/quiz-show-buzzer-01.mp3';
         }
         else {
-            const soundEffect = './assets/music/record-scratch-01.mp3';
-            sound.src = soundEffect;
+            soundEffect = './assets/music/record-scratch-01.mp3';
         }
+
+        this.playSound(soundEffect);
+    }
+    playSound(src) {
+        let sound = new Audio();
+        sound.src = src;
         sound.play();
-    
+    }
+    togglePlayer(on) {
+        const method = on ? 'add' : 'remove';
+        this.playerMechanic.classList[method]('player-mechanic-on');
+        this.vinylRecord.classList[method]('spinning');
+        this.innerRecord.classList[method]('spinning');
     }
     render() {
         const dom = makeTemplate();
         this.list = dom.querySelector('ul');
         this.showRandomAnswers();
         
-        const playerMechanic = dom.querySelector('.player-mechanics');
-        const vinylRecord = dom.querySelector('.vinyl-record');
-        const innerRecord = dom.querySelector('.vinyl-record-inner');
+        this.playerMechanic = dom.querySelector('.player-mechanics');
+        this.vinylRecord = dom.querySelector('.vinyl-record');
+        this.innerRecord = dom.querySelector('.vinyl-record-inner');
         
-        const playbuttonofdoom = dom.getElementById('playbuttonofdoom');
-        playbuttonofdoom.addEventListener('click', () => {
+        const playButtonOfDoom = dom.getElementById('play-button-of-doom');
+        playButtonOfDoom.addEventListener('click', () => {
             
-            playerMechanic.classList.add('player-mechanic-on');
-            vinylRecord.classList.add('spinning');
-            innerRecord.classList.add('spinning');
+            this.togglePlayer(true);
             
-            let newAudio = new Audio();
             const currentSong = music[this.currentSongIndex];
-            newAudio.src = currentSong.song;
-            newAudio.play();
-            window.setTimeout(reset, 1000);
+            this.playSound(currentSong.song);
+
+            window.setTimeout(() => this.togglePlayer(false), 1000);
         }); 
-        function reset(){
-            playerMechanic.classList.remove('player-mechanic-on');
-            vinylRecord.classList.remove('spinning');
-            innerRecord.classList.remove('spinning');
-        }
+        
         return dom;
     }
 }

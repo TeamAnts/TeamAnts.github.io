@@ -3,7 +3,10 @@ import html from './html.js';
 function makeTemplate() {
     return html`
         <form id="login" name="player">
-            <input name="playerName" id="playerName" placeholder="Enter your name" autocomplete="off"required/> 
+            <input name="playerName" id="playerName" 
+                placeholder="Enter your name" 
+                autocomplete="off" 
+                required/> 
             <div class=genre>
                 <label for="popular">
                     Pop
@@ -31,16 +34,10 @@ class LoginForm {
             event.preventDefault();
 
             const elements = form.elements;
-            const genre = document.getElementsByName('genre');
-            let checkedRadio;
-            for(let i = 0; i < genre.length; i ++) {
-                if(genre[i].checked === true) {
-                    checkedRadio = genre[i].value;
-                }
-            }
+            // for radio buttons, you can just access the value
             const player = {
                 name: elements.playerName.value,
-                chosenGenre: checkedRadio
+                chosenGenre: elements.genre.value
             };
             this.onSubmit(player); 
         });

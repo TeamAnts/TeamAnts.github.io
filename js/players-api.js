@@ -65,9 +65,13 @@ const playersApi = {
 
         savePlayers();
     },
+    getCurrent() {
+        const players = this.getAll();
+        return players[players.length - 1];
+    },
     update(score) {
-        const player = playersApi.getAll();
-        player[player.length - 1].score = score;    
+        const player = this.getCurrent();
+        player.score = score;    
         
         savePlayers();
     }
