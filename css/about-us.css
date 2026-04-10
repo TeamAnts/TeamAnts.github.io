@@ -147,7 +147,7 @@ body {
 
   .wrapper {
 	h1 {
-    font-size: 4em;      /* ← scale down on mobile */
+    font-size: 2em;      /* ← scale down on mobile */
   }
     padding-top: 180px;   /* ← even more padding on mobile */
   }
