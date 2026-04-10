@@ -40,14 +40,17 @@ li {
 	font-size: 24px;
     margin: 5px 0px;
 }
-/* Mobile - single column */
 @media (max-width: 768px) {
-    .answer-list {
+  .answer-list {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin: 25px;
-   
-}
+    height: auto;          /* ← let it grow naturally */
+  }
 
+  .game-form {
+    min-height: auto;      /* ← let content define the height */
+    padding-bottom: 40px;
+  }
 }
