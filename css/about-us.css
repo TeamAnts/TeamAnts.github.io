@@ -1,6 +1,6 @@
 .album {
   height: 300px;
-  width: 300px;
+  width: 400px;
   position: relative;
   flex-shrink: 0;
   overflow: hidden;    /* ← keeps children contained */
@@ -149,7 +149,6 @@ body {
 	h1 {
     font-size: 2em;      /* ← scale down on mobile */
   }
-    padding-top: 180px;   /* ← even more padding on mobile */
   }
   .album-wrapper {
     flex-direction: column;
