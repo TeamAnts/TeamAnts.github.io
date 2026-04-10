@@ -21,12 +21,12 @@
 	height: 100px;
     width: 100px;
     margin-top: 40px;
-    cursor: pointer;
+    cursor: hand;
     font-family: 'Abel', sans-serif;
     font-size: 18px;
 }
 li {
-	cursor: pointer;
+	cursor: hand;
 }
 .hidden{
 	display: block;
@@ -39,4 +39,14 @@ li {
     font-family: 'Abel', sans-serif;
 	font-size: 24px;
     margin: 5px 0px;
+}
+/* Mobile - single column */
+@media (max-width: 768px) {
+    .answer-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+   
+}
+
 }
