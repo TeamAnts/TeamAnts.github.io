@@ -18,7 +18,7 @@ function makeTemplate() {
             <div class="tone-arm"></div>
             <div class="stylus"></div>
         </div>
-        <div class="vinyl-record-inner"><img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_630,w_1200,f_auto,q_auto/v1/983693/axmqlpjyo3zmeszdr9qt.png"></div>
+        <div class="vinyl-record-inner"><img src="/Users/fieldnotesmedia/Codebox/TeamAnts.github.io/assets/images/music-note.svg"></div>
         <div class="vinyl-record"></div>
     </section>
     <div class="hidden">Click the record to listen!</div>
