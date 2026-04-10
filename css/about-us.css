@@ -32,6 +32,8 @@
   display: block;
   transition: all .25s ease-out;
   background-image: url(../assets/images/vinyl.png);
+  background-size: cover;    
+  background-repeat: no-repeat;  
 }
 .cover1{
 	background-image:url(../assets/images/fleetwoodMacRumours.jpg);	
