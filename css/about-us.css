@@ -31,10 +31,8 @@
 .album {
 	height:300px;
 	width:300px;
-	float:left;
-	margin-right:200px;
-    margin-top:50px;
-    padding-left: 150px;
+	position: relative;    /* needed for absolute children to work */
+    flex-shrink: 0;        /* prevents albums from squishing */
 }
 div.album:hover .vinyl {
 	transform:  translateX(150px) rotate(195deg);
@@ -57,7 +55,10 @@ body {
     flex-direction: row;
     justify-content: center;
 	align-items: center;
-	padding-right: 10px;
+	flex-wrap: wrap;        /* wraps on smaller screens */
+    gap: 40px;              /* replaces the large margins */
+    width: 100%;
+    padding: 20px 0;
 }
 .play-again-wrapper {
 	display: flex;
