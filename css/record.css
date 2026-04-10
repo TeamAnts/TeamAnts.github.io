@@ -37,7 +37,7 @@ section.player{
 }
 .player-mechanic-on {
     animation-name: tonearm;
-    animation-duration: 1085ms;
+    animation-duration: 3085ms;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-direction: forward;
@@ -56,7 +56,7 @@ section.player{
 }
 .spinning {
     animation-name: spin;
-    animation-duration: 1085ms;
+    animation-duration: 3085ms;
     animation-iteration-count: 4.15s;
     animation-timing-function: linear; 
     animation-fill-mode: forwards;
