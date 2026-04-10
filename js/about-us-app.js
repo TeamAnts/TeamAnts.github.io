@@ -7,40 +7,48 @@ function makeTemplate() {
         <header></header>
         <div class="wrapper">
             <div class="album-wrapper">
-                <div class="album aaron">
-                    <span class="vinyl"></span>
-                    <span class="cover cover1"></span>
-                </div>
-                <div class="aaron-profile">
-                    <h4>Aaron</h4>
-                    Climber, traveler, software developer, and amateur chef.
-                </div>
-
-                <div class="album michael">
-                    <span class="vinyl"></span>
-                    <span class="cover cover2"></span>
-                </div>
-                <div class="michael-profile">
-                    <h4>Michael</h4>
-                    Musician, Recovering Art School Student, Chef, Father, Miscreant.
+                <div class="album-item">
+                    <div class="album aaron">
+                        <span class="vinyl"></span>
+                        <span class="cover cover1"></span>
+                    </div>
+                    <div class="aaron-profile">
+                        <h4>Aaron</h4>
+                        Climber, traveler, software developer, and amateur chef.
+                    </div>
                 </div>
 
-                <div class="album teonna">
-                    <span class="vinyl"></span>
-                    <span class="cover cover3"></span>
-                </div>
-                <div class="teonna-profile">
-                    <h4>Teonna</h4>
-                    Ultra runner, student, nurse and collector of unnecessary crafting supplies.
+                <div class="album-item">
+                    <div class="album michael">
+                        <span class="vinyl"></span>
+                        <span class="cover cover2"></span>
+                    </div>
+                    <div class="michael-profile">
+                        <h4>Michael</h4>
+                        Musician, Recovering Art School Student, Chef, Father, Miscreant.
+                    </div>
                 </div>
 
-                <div class="album carmen">
-                    <span class="vinyl"></span>
-                    <span class="cover cover4"></span>
+                <div class="album-item">
+                    <div class="album teonna">
+                        <span class="vinyl"></span>
+                        <span class="cover cover3"></span>
+                    </div>
+                    <div class="teonna-profile">
+                        <h4>Teonna</h4>
+                        Ultra runner, student, nurse and collector of unnecessary crafting supplies.
+                    </div>
                 </div>
-                <div class="carmen-profile">
-                    <h4>Carmen</h4>
-                    Mother, student, software developer, food and nutrition enthusiast.
+
+                <div class="album-item">
+                    <div class="album carmen">
+                        <span class="vinyl"></span>
+                        <span class="cover cover4"></span>
+                    </div>
+                    <div class="carmen-profile">
+                        <h4>Carmen</h4>
+                        Mother, student, software developer, food and nutrition enthusiast.
+                    </div>
                 </div>
             </div>
         </div>

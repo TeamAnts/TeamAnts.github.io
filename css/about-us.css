@@ -5,6 +5,11 @@
   flex-shrink: 0;
   overflow: hidden;    /* ← keeps children contained */
 }
+.album-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .cover {
   position: absolute;
