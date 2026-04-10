@@ -4,56 +4,50 @@ import Footer from './footer.js';
 
 function makeTemplate() {
     return html`
-            <header></header>
-            <div class="wrapper">
-                <div class="album-wrapper">
-                    <div class="album aaron">
-                        <span class="vinyl"></span>
-                        <span class="cover cover1"></span>
-                    </div>
-                    <div class="aaron-profile">
+        <header></header>
+        <div class="wrapper">
+            <div class="album-wrapper">
+                <div class="album aaron">
+                    <span class="vinyl"></span>
+                    <span class="cover cover1"></span>
+                </div>
+                <div class="aaron-profile">
                     <h4>Aaron</h4>
                     Climber, traveler, software developer, and amateur chef.
-                    </div>
                 </div>
 
-                <div class="album-wrapper">
-                    <div class="album michael">
-                        <span class="vinyl"></span>
-                        <span class="cover cover2"></span>
-                    </div>
-                    <div class="michael-profile">
+                <div class="album michael">
+                    <span class="vinyl"></span>
+                    <span class="cover cover2"></span>
+                </div>
+                <div class="michael-profile">
                     <h4>Michael</h4>
-                    Musician, Recovering Art School Student, Chef, Father, Miscreant. 
-                    </div>
+                    Musician, Recovering Art School Student, Chef, Father, Miscreant.
                 </div>
 
-                <div class="album-wrapper">
-                    <div class="album teonna">
-                        <span class="vinyl"></span>
-                        <span class="cover cover3"></span>
-                    </div>
-                    <div class="teonna-profile">
+                <div class="album teonna">
+                    <span class="vinyl"></span>
+                    <span class="cover cover3"></span>
+                </div>
+                <div class="teonna-profile">
                     <h4>Teonna</h4>
-                    Ultra runner, student, nurse and collector of unnecessary crafting supplies. 
-                    </div>
+                    Ultra runner, student, nurse and collector of unnecessary crafting supplies.
                 </div>
 
-                <div class="album-wrapper">
-                    <div class="album carmen">
-                        <span class="vinyl"></span>
-                        <span class="cover cover4"></span>
-                    </div>
-                    <div class="carmen-profile">
+                <div class="album carmen">
+                    <span class="vinyl"></span>
+                    <span class="cover cover4"></span>
+                </div>
+                <div class="carmen-profile">
                     <h4>Carmen</h4>
-                    Mother,  student,  software developer, food and nutrition enthusiast. 
-                    </div>
+                    Mother, student, software developer, food and nutrition enthusiast.
                 </div>
             </div>
-            <div class="play-again-wrapper">
-                <button class="play-again"><a href="./index.html">Play Game</a></button>
-            </div>
-            <footer></footer>
+        </div>
+        <div class="play-again-wrapper">
+            <button class="play-again"><a href="./index.html">Play Game</a></button>
+        </div>
+        <footer></footer>
     `;
 }
 
