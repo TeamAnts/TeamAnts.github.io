@@ -68,7 +68,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: nowrap;
   gap: 20px;
   width: 100%;
@@ -140,4 +140,18 @@ body {
 	border-radius: 40px;
 	margin: 40px;
 	background-color: #fb2e01;
+}
+
+/* Mobile - single column */
+@media (max-width: 768px) {
+  .album-wrapper {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+
+  .album-item {
+    width: 300px;
+  }
 }
