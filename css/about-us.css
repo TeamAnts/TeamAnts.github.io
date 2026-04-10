@@ -1,6 +1,6 @@
 .album {
   height: 300px;
-  width: 400px;
+  width: 405px;
   position: relative;
   flex-shrink: 0;
   overflow: hidden;    /* ← keeps children contained */
@@ -65,16 +65,16 @@ body {
   width: 100%;        /* change 80vw to 100% */
 }
 .album-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  flex-wrap: nowrap;
-  gap: 20px;
-  width: 100%;
-  padding: 40px 20px;
-  box-sizing: border-box;
-  overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: inherit;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    overflow-x: auto;
 }
 .play-again-wrapper {
 	display: flex;
