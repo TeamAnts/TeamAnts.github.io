@@ -144,6 +144,13 @@ body {
 
 /* Mobile - single column */
 @media (max-width: 768px) {
+
+  .wrapper {
+	h1 {
+    font-size: 4em;      /* ← scale down on mobile */
+  }
+    padding-top: 180px;   /* ← even more padding on mobile */
+  }
   .album-wrapper {
     flex-direction: column;
     align-items: center;
