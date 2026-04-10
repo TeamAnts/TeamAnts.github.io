@@ -1,20 +1,32 @@
-.vinyl {
-	position:absolute;
-	height:300px;
-	width:300px;
-	z-index: -11;
-	display: block;
-	transition: all .25s ease-out;
-	background-image:url(../assets/images/vinyl.png);
-	
+.album {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;    /* ← keeps children contained */
 }
-.cover{
-	position:absolute;
-	height:250px;
-	width:250px;
-	z-index: 33;
-	background-size: cover;
-	background-position: center center;
+
+.cover {
+  position: absolute;
+  top: 0;              /* ← anchors to top left of .album */
+  left: 0;
+  height: 250px;
+  width: 250px;
+  z-index: 33;
+  background-size: cover;
+  background-position: center center;
+}
+
+.vinyl {
+  position: absolute;
+  top: 0;              /* ← anchors to top left of .album */
+  left: 0;
+  height: 300px;
+  width: 300px;
+  z-index: -11;
+  display: block;
+  transition: all .25s ease-out;
+  background-image: url(../assets/images/vinyl.png);
 }
 .cover1{
 	background-image:url(../assets/images/fleetwoodMacRumours.jpg);	
@@ -27,12 +39,6 @@
 }
 .cover4{
 	background-image:url(../assets/images/madonna.jpeg);	
-}
-.album {
-	height:300px;
-	width:300px;
-	position: relative;    /* needed for absolute children to work */
-    flex-shrink: 0;        /* prevents albums from squishing */
 }
 div.album:hover .vinyl {
 	transform:  translateX(150px) rotate(195deg);
